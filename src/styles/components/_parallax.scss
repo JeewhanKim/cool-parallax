@@ -1,0 +1,31 @@
+%cool-parallax {
+  width: 100%;
+  height: 100vh;
+
+}
+
+.prx {
+  &-landing,
+  &-chapter {
+    @extend %cool-parallax;
+    background-color: #fec56d;
+  }
+}
+
+#prx{
+  &-landing {
+    background-color: #fec56d;
+    background-position: center;
+    background-size: auto;
+    position: relative;
+  }
+  &-chapter-01 {
+    background-color: #eee;
+  }
+  &-chapter-02 {
+    background-color: #b1deed;
+  }
+  &-chapter-03 {
+    background-color: #f79cc1;
+  }
+}

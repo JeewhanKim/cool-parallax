@@ -1,3 +1,20 @@
-button {
-  color: black;
+/* Main Nav */
+#sticky-menu {
+  z-index: 99;
+  position: fixed;
+  top: 4%;
+  left: 1.5%;
+  a {
+    color: black;
+    text-decoration: none;
+    padding: 0 10px;
+  }
+}
+
+/* Main Nav Indicator */
+#prx-nav {
+  z-index: 99;
+  position: fixed;
+  top: 4%;
+  right: 1.5%;
 }

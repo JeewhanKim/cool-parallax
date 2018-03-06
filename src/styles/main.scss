@@ -1,6 +1,19 @@
 // @import 'local/local';
 @import 'components/components';
 
+html,
 body {
-  // background-color: black;
+  margin: 0;
+  padding: 0;
 }
+
+ul {
+  list-style: none;
+}
+
+// @include type(disclaimer);
+// @include mqm() {
+//     margin-left: auto;
+//     margin-right: auto;
+// }
+
