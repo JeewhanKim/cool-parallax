@@ -23,4 +23,12 @@ yarn add cool-parallax
 
 ## Usage
 
+```
+npm run build
+```
+
+```
+npm run server
+```
+
 TBD

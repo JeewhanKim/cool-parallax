@@ -4,8 +4,8 @@
   "description": "Simple Javascript libraries to create parallax scroll effects for background images",
   "main": "index.js",
   "scripts": {
-    "test": "npm test",
-    "build": "webpack"
+    "build": "webpack --mode development --watch",
+    "server": "webpack-dev-server --open --watch --mode development"
   },
   "keywords": [
     "parallax",
@@ -28,6 +28,7 @@
     "style-loader": "^0.20.2",
     "webpack": "^4.1.0",
     "webpack-cli": "^2.0.10",
-    "webpack-dev-server": "^3.1.0"
+    "webpack-dev-server": "^3.1.0",
+    "webpack-stream": "^4.0.2"
   }
 }

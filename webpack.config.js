@@ -2,19 +2,22 @@ const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-  entry: [
-    './src/app.jsx',
-    './src/styles/main.scss',
-    './src/index.html'
-  ],
+  entry: {
+    'app': [
+      './src/app.jsx', 
+      './src/styles/main.scss', 
+      './src/index.html'
+    ],
+    'js': './src/lib/cool-parallax.js'
+  },
   output: {
-    filename: 'app.bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist/assets')
   },
   module: {
     rules: [
       { 
-        test: /\.js$/,
+        test: /\.js/,
         loader: 'babel-loader',
         exclude: /node_modules/
       },
@@ -27,17 +30,32 @@ module.exports = {
         exclude: /node_modules/ 
       },
       {
-        test: /\.(sass|scss)$/,
-        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
+        test: /\.scss$/,
+        // loader: ['css-loader', 'sass-loader']
+        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader']) // for production
       },
       {
         test: /\.html$/,
         loader: 'file-loader',
         options: {
-          name: 'index.html'
+          outputPath: '../', // -> /dist
+          name: 'index-prod.html'
         }
       }
     ]
+  },
+  resolve: {
+    // resolve file extensions
+    extensions: ['.jsx', '.js']
+  },
+  devServer: {
+    contentBase: path.join(__dirname, "./dist/"),
+    disableHostCheck: true, // for local proxy settings
+    compress: true,
+    port: 9950
+  },
+  watchOptions: {
+    poll: true
   },
   plugins: [
     new ExtractTextPlugin({
@@ -46,3 +64,7 @@ module.exports = {
     }),
   ]
 };
+
+
+// test: /\.scss$/,
+// loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
