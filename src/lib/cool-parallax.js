@@ -11,7 +11,7 @@ const initialStyles = () => {
 }
 
 const scrollDetect = () => {
-  console.log('scrollDetect')
+  // console.log('scrollDetect')
 }
 
 genNav()
