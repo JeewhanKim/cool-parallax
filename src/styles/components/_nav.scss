@@ -12,9 +12,42 @@
 }
 
 /* Main Nav Indicator */
-#prx-nav {
-  z-index: 99;
+.nav {
   position: fixed;
-  top: 4%;
-  right: 1.5%;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 22px;
+  text-align: right;
+  z-index: 550;
+  ul {
+    list-style: none;
+  }
+  li {
+    padding-top: 3px;
+    padding-left: 6.5px;
+    padding-right: 6.5px;
+    padding-bottom: 6px;
+    color: white;
+    cursor: pointer;
+    &:after {
+      content: '';
+      border: 0.75px solid $themeColor;
+      border-radius: 50px;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      height: 8px;
+      width: 4px;
+      display: inline-block;
+      padding: 0 0 0 5px;
+      position: relative;
+      top: 2px;
+      @include transition(.5s, 'cubic', 0s);
+    }
+    &:hover,
+    &.active {
+      &:after {
+        background: $themeColor;
+      }
+    }
+  }
 }
