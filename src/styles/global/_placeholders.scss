@@ -1,0 +1,10 @@
+%animate {
+  -webkit-transition: .4s cubic-bezier(.175,.885,.32,1.275).8s;
+  -moz-transition: .4s cubic-bezier(.175,.885,.32,1.275).8s;
+  -o-transition: .4s cubic-bezier(.175,.885,.32,1.275).8s;
+  transition: .4s cubic-bezier(.175,.885,.32,1.275).8s;
+}
+%cool-parallax {
+  width: 100%;
+  height: 100vh;
+}

@@ -1,0 +1,43 @@
+@mixin transition($time, $transition, $delay){
+  @if $transition == 'cubic' {
+    $transition: cubic-bezier(.175,.885,.32,1.275);
+  } @else {
+    $transition: linear;
+  }
+
+  -webkit-transition: $time $transition $delay;
+  -moz-transition: $time $transition $delay;
+  -o-transition: $time $transition $delay;
+  transition: $time $transition $delay;
+} 
+
+@mixin diagonal($direction, $color){
+  &:before {
+    position: absolute;
+    content: '';
+    display: block;
+    @if $direction == 'left' {
+      -webkit-transform-origin: left top;
+      -ms-transform-origin: left top;
+      transform-origin: left top;
+      -webkit-transform: rotate(-5deg);
+      -ms-transform: rotate(-5deg);
+      transform: rotate(-5deg);
+      left: 0;
+    } @else if $direction == 'right' {
+      -webkit-transform-origin: right top;
+      -ms-transform-origin: right top;
+      transform-origin: right top;
+      -webkit-transform: rotate(5deg);
+      -ms-transform: rotate(5deg);
+      transform: rotate(5deg);
+      right: 0;
+    }
+    
+    background: $color;
+    z-index: 150;
+    width: 120%;
+    height: 225px;
+    top: 0;
+  }
+}
