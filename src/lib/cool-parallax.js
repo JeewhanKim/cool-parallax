@@ -3,16 +3,8 @@ const win = $(window)
 const doc = $(document)
 
 const genContents = () => {
-
   if(contents === undefined) return
-  $.map(contents, (val,prop) => {
-    $(`#${prop}`).html(val)
-    // console.log(prop + val)
-  })
-  // contents.toArray().map((e,i,a) => {
-  //   console.log(i)
-  // })
-  // console.log(contents.headline)
+  $.map(contents, (val,prop) => {$(`#${prop}`).html(val)})
 }
 
 const genNav = () => {

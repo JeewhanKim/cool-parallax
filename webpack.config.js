@@ -31,7 +31,6 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        // loader: ['css-loader', 'sass-loader']
         loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader']) // for production
       },
       {
@@ -41,7 +40,15 @@ module.exports = {
           outputPath: '../', // -> /dist
           name: 'index-prod.html'
         }
-      }
+      },
+      // {
+      //   test: /\.json$/,
+      //   loader: 'file-loader',
+      //   options: {
+      //     outputPath: '../', // -> /dist
+      //     name: 'copied.contents.js'
+      //   }
+      // }
     ]
   },
   resolve: {
