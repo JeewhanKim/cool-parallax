@@ -13,8 +13,14 @@ main {
   overflow-x: hidden;
   background-color: white;
 }
-.section {
+section {
   position: relative;
+  > * {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+.section {
   @import 'sectionLanding';
   @import 'sectionAbout';
   @import 'sectionServices';

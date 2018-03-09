@@ -1,13 +1,93 @@
+#sticky-menu ul li a {
+  display: inline;
+  position: relative;
+  overflow: hidden; }
+
+#sticky-menu ul li a:after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  width: 0;
+  bottom: -5px;
+  background: #000;
+  height: 2px;
+  transition-property: width;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out; }
+
+#sticky-menu ul li a.active:after, #sticky-menu ul li a:hover:after, #sticky-menu ul li a:focus:after, #sticky-menu ul li a:active:after {
+  left: 0;
+  right: auto;
+  width: 100%; }
+
 /* Main Nav */
 #sticky-menu {
-  z-index: 99;
   position: fixed;
-  top: 4%;
-  left: 1.5%; }
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 100%;
+  text-align: center;
+  z-index: 1000;
+  background: #FFF;
+  z-index: 9000; }
   #sticky-menu a {
     color: black;
     text-decoration: none;
-    padding: 0 10px; }
+    padding: 0; }
+  #sticky-menu:before {
+    height: 80px;
+    content: '';
+    display: block;
+    background: #FFF;
+    border-bottom: 1px solid #ebebeb; }
+  #sticky-menu #logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    display: none;
+    -webkit-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+    -moz-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+    -o-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+    transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s; }
+  #sticky-menu.sticky #logo {
+    opacity: 1;
+    display: block; }
+  #sticky-menu.sticky ul {
+    left: 100%;
+    transform: translateX(-100%); }
+  #sticky-menu ul {
+    top: auto;
+    bottom: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    position: absolute;
+    padding: 20px;
+    margin: 0;
+    list-style: none;
+    width: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+    -moz-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+    -o-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+    transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s; }
+    #sticky-menu ul.sticky {
+      left: 100%;
+      transform: translateX(-100%); }
+    #sticky-menu ul li {
+      margin: 0;
+      padding: 10px 50px;
+      display: inline-block; }
+      #sticky-menu ul li a {
+        text-transform: uppercase;
+        -webkit-transition: .1s;
+        transition: .1s;
+        font-size: .875em;
+        letter-spacing: .15em; }
 
 /* Main Nav Indicator */
 .nav {
@@ -33,7 +113,7 @@
       -webkit-border-radius: 50px;
       -moz-border-radius: 50px;
       height: 8px;
-      width: 4px;
+      width: 2px;
       display: inline-block;
       padding: 0 0 0 5px;
       position: relative;
@@ -59,78 +139,86 @@ main {
   overflow-x: hidden;
   background-color: white; }
 
-.section {
+section {
   position: relative; }
-  .section-landing {
-    background-color: #ebebeb;
-    width: 100%;
-    height: 600px; }
-  .section-about {
-    width: 100%;
-    height: 1500px;
-    position: relative; }
-    .section-about:before {
-      position: absolute;
-      content: '';
-      display: block;
-      -webkit-transform-origin: left top;
-      -ms-transform-origin: left top;
-      transform-origin: left top;
-      -webkit-transform: rotate(-5deg);
-      -ms-transform: rotate(-5deg);
-      transform: rotate(-5deg);
-      left: 0;
-      background: white;
-      z-index: 150;
-      width: 120%;
-      height: 225px;
-      top: 0; }
-  .section-services {
-    width: 100%;
-    height: 1500px;
-    position: relative;
-    background-color: #ebebeb; }
-    .section-services:before {
-      position: absolute;
-      content: '';
-      display: block;
-      -webkit-transform-origin: right top;
-      -ms-transform-origin: right top;
-      transform-origin: right top;
-      -webkit-transform: rotate(5deg);
-      -ms-transform: rotate(5deg);
-      transform: rotate(5deg);
-      right: 0;
-      background: #ebebeb;
-      z-index: 150;
-      width: 120%;
-      height: 225px;
-      top: 0; }
-  .section-clients {
-    width: 100%;
-    height: 1000px;
-    background-color: white; }
-  .section-contact {
-    width: 100%;
-    height: 1000px;
-    position: relative;
-    background-color: #ebebeb; }
-    .section-contact:before {
-      position: absolute;
-      content: '';
-      display: block;
-      -webkit-transform-origin: left top;
-      -ms-transform-origin: left top;
-      transform-origin: left top;
-      -webkit-transform: rotate(-5deg);
-      -ms-transform: rotate(-5deg);
-      transform: rotate(-5deg);
-      left: 0;
-      background: #ebebeb;
-      z-index: 150;
-      width: 120%;
-      height: 225px;
-      top: 0; }
+  section > * {
+    max-width: 1200px;
+    margin: 0 auto; }
+
+.section-landing {
+  background-color: #ebebeb;
+  width: 100%;
+  height: 600px; }
+
+.section-about {
+  width: 100%;
+  height: 1500px;
+  position: relative; }
+  .section-about:before {
+    position: absolute;
+    content: '';
+    display: block;
+    -webkit-transform-origin: left top;
+    -ms-transform-origin: left top;
+    transform-origin: left top;
+    -webkit-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+    left: 0;
+    background: white;
+    z-index: 150;
+    width: 120%;
+    height: 225px;
+    top: 0; }
+
+.section-services {
+  width: 100%;
+  height: 1500px;
+  position: relative;
+  background-color: #ebebeb; }
+  .section-services:before {
+    position: absolute;
+    content: '';
+    display: block;
+    -webkit-transform-origin: right top;
+    -ms-transform-origin: right top;
+    transform-origin: right top;
+    -webkit-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    transform: rotate(5deg);
+    right: 0;
+    background: #ebebeb;
+    z-index: 150;
+    width: 120%;
+    height: 225px;
+    top: 0; }
+
+.section-clients {
+  width: 100%;
+  height: 1000px;
+  background-color: white; }
+
+.section-contact {
+  width: 100%;
+  height: 1000px;
+  position: relative;
+  background-color: #ebebeb; }
+  .section-contact:before {
+    position: absolute;
+    content: '';
+    display: block;
+    -webkit-transform-origin: left top;
+    -ms-transform-origin: left top;
+    transform-origin: left top;
+    -webkit-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+    left: 0;
+    background: #ebebeb;
+    z-index: 150;
+    width: 120%;
+    height: 225px;
+    top: 0; }
 
 html,
 body {
