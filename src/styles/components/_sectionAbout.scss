@@ -3,4 +3,9 @@
   height: 1500px;
   position: relative;
   @include diagonal('left', white);
+  > * {
+    position: relative;
+    z-index: 200;
+    text-align: center;
+  }
 }

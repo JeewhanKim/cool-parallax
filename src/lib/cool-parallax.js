@@ -1,8 +1,13 @@
-// alert('jee test');
+/* Cool Parallax */
+/* Demo Page */
+
 const win = $(window)
 const doc = $(document)
+const nav = $('.nav')
+const stickyNav = $('#sticky-menu')
+const navButtons = nav.find('li')
+
 let elements = []
-let navButtons = $('.nav').find('li')
 let offSets = []
 let animate = false
 let scrollSpeed = 600
@@ -34,15 +39,14 @@ const init = () => {
     // console.log(obj.options)
   })
   $('.chapter').each((i, elm) => {
-    offSets.push($(elm).offset().top)
+    offSets.push($(elm).offset().top + stickyNav.outerHeight())
   })
-  console.log(offSets);
 
   navButtons.click((e) => {
     if(animate) return
     animate = true
     const target = $(e.currentTarget).data('for')
-    , moveTo = $(`.${target}`).offset().top
+    , moveTo = $(target).offset().top - stickyNav.outerHeight()
     $("html, body").animate({
       scrollTop: moveTo
     }, scrollSpeed, () => {
@@ -69,9 +73,18 @@ const scrollDetect = () => {
   })
 
   elements.forEach((elm) => {
-    if(elm.options.effect === "stickyLogo" && elm.options.target !== undefined) {
-      ($(elm.options.target).offset().top + elm.options.offset < st) ? 
-        $(elm.container).addClass('active') : $(elm.container).removeClass('active')
+    const o = elm.options
+    if(o.effect === "stickyLogo" && o.target !== undefined) {
+      return ($(o.target).offset().top + o.offset < st) ? $(elm.container).addClass('active') : $(elm.container).removeClass('active')
+    }
+    if(o.class !== undefined) {
+      let revisedSt = o.trigger === "top" ? st : st + windowHeight
+      if((revisedSt + o.offset) > $(o.target).offset().top) {
+        $(elm.container).addClass(o.class)
+      } else if(!o.once){
+        $(elm.container).removeClass(o.class)
+      }
+        
     }
   })
 

@@ -15,9 +15,39 @@ main {
 }
 section {
   position: relative;
+  padding-top: 50px;
   > * {
     max-width: 1200px;
     margin: 0 auto;
+  }
+  h2 {
+    text-align: center;
+    @include transition(.5s, cubic-bezier(.77,0,.175,1), 0s);
+    top: 20px;
+    opacity: 0;
+    font-size: 60px;
+    &.animate {
+      top: 0;
+      opacity: 1;
+    }
+  }
+  .line {
+    &:after {
+      content: '';
+      display: block;
+      width: 0;
+      background: #1D1D1F;
+      height: 4px;
+      margin: 70px auto;
+      @include transition(.5s, cubic-bezier(.77,0,.175,1), 0s);
+    }
+    &.animate {
+      width: 0;
+      &:after {
+        width: 100px;
+        transform: translateX(-50%);
+      }
+    }
   }
 }
 .section {

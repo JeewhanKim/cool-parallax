@@ -140,10 +140,39 @@ main {
   background-color: white; }
 
 section {
-  position: relative; }
+  position: relative;
+  padding-top: 50px; }
   section > * {
     max-width: 1200px;
     margin: 0 auto; }
+  section h2 {
+    text-align: center;
+    -webkit-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+    -moz-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+    -o-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+    transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+    top: 20px;
+    opacity: 0;
+    font-size: 60px; }
+    section h2.animate {
+      top: 0;
+      opacity: 1; }
+  section .line:after {
+    content: '';
+    display: block;
+    width: 0;
+    background: #1D1D1F;
+    height: 4px;
+    margin: 70px auto;
+    -webkit-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+    -moz-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+    -o-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+    transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s; }
+  section .line.animate {
+    width: 0; }
+    section .line.animate:after {
+      width: 100px;
+      transform: translateX(-50%); }
 
 .section-landing {
   background-color: #ebebeb;
@@ -170,6 +199,10 @@ section {
     width: 120%;
     height: 225px;
     top: 0; }
+  .section-about > * {
+    position: relative;
+    z-index: 200;
+    text-align: center; }
 
 .section-services {
   width: 100%;

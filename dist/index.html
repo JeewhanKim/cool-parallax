@@ -25,11 +25,11 @@
       <!-- Nav Indicators -->
       <div id="prx-nav" class="nav">
         <ul>
-          <li class="" data-for="section-landing"></li>
-          <li data-for="section-about"></li>
-          <li data-for="section-services"></li>
-          <li data-for="section-clients"></li>
-          <li data-for="section-contact"></li>
+          <li class="" data-for=".section-landing"></li>
+          <li data-for=".section-about"></li>
+          <li data-for=".section-services"></li>
+          <li data-for=".section-clients"></li>
+          <li data-for=".section-contact"></li>
         </ul>
       </div>
       
@@ -37,8 +37,8 @@
         video...
       </section>
       <section class="chapter section-about">
-        <h2>ABOUT</h2>
-        <div class="line"></div>
+        <h2 id="aboutTitle" class="cool-parallax" data-animate='{"class":"animate", "target":"#aboutTitle", "offset":-150, "once":false}'></h2>
+        <div class="line cool-parallax" data-animate='{"class":"animate", "target":"#aboutTitle", "offset":-50, "once":false}'></div>
         <p class="" id="about01"></p>
         <div class="learn-more">LEARN MORE</div>
         <div class="learn-more-section" id="about02">
