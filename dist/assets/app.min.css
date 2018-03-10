@@ -143,8 +143,11 @@ section {
   position: relative;
   padding-top: 50px; }
   section > * {
+    position: relative;
     max-width: 1200px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    z-index: 200;
+    text-align: center; }
   section h2 {
     text-align: center;
     -webkit-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
@@ -177,11 +180,11 @@ section {
 .section-landing {
   background-color: #ebebeb;
   width: 100%;
-  height: 600px; }
+  min-height: 500px; }
 
 .section-about {
   width: 100%;
-  height: 1500px;
+  min-height: 500px;
   position: relative; }
   .section-about:before {
     position: absolute;
@@ -199,15 +202,10 @@ section {
     width: 120%;
     height: 225px;
     top: 0; }
-  .section-about > * {
-    position: relative;
-    z-index: 200;
-    text-align: center; }
 
 .section-services {
   width: 100%;
-  height: 1500px;
-  position: relative;
+  min-height: 500px;
   background-color: #ebebeb; }
   .section-services:before {
     position: absolute;
@@ -228,13 +226,12 @@ section {
 
 .section-clients {
   width: 100%;
-  height: 1000px;
+  min-height: 500px;
   background-color: white; }
 
 .section-contact {
   width: 100%;
-  height: 1000px;
-  position: relative;
+  min-height: 500px;
   background-color: #ebebeb; }
   .section-contact:before {
     position: absolute;

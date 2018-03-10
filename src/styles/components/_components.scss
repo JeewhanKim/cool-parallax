@@ -17,8 +17,11 @@ section {
   position: relative;
   padding-top: 50px;
   > * {
+    position: relative;
     max-width: 1200px;
     margin: 0 auto;
+    z-index: 200;
+    text-align: center;
   }
   h2 {
     text-align: center;
