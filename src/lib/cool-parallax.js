@@ -1,6 +1,20 @@
 // alert('jee test');
 const win = $(window)
 const doc = $(document)
+let elements = []
+let navButtons = $('.nav').find('li')
+let offSets = []
+let animate = false
+let scrollSpeed = 600
+
+class Elements {
+  constructor() {
+    this.container = null,
+    this.options = {}
+  }
+}
+
+
 
 const genContents = () => {
   if(contents === undefined) return
@@ -11,18 +25,70 @@ const genNav = () => {
 
 }
 
-const initialStyles = () => {
-  // alert('init');
+const init = () => {
+  $('.cool-parallax').each((i, elm) => {
+    let obj = new Elements()
+    obj.container = $(elm)
+    obj.options = $(elm).attr('data-animate') ? JSON.parse($(elm).attr('data-animate')) : {}
+    elements.push(obj)
+    // console.log(obj.options)
+  })
+  $('.chapter').each((i, elm) => {
+    offSets.push($(elm).offset().top)
+  })
+  console.log(offSets);
+
+  navButtons.click((e) => {
+    if(animate) return
+    animate = true
+    const target = $(e.currentTarget).data('for')
+    , moveTo = $(`.${target}`).offset().top
+    $("html, body").animate({
+      scrollTop: moveTo
+    }, scrollSpeed, () => {
+      animate = false
+    });
+  });
 }
 
 const scrollDetect = () => {
   // console.log('scrollDetect')
+  const st = $(window).scrollTop()
+  const windowHeight = window.innerHeight 
+
+  /* Chapter Active Detection */
+  navButtons.each((i, elm) => {
+    if(i === 0) {
+      (st <= offSets[i+1] - windowHeight/2) ? $(elm).addClass('active') : $(elm).removeClass('active')
+    } else if(i+1 < navButtons.length) {
+      ((st > offSets[i] - windowHeight/2) && (st <= offSets[i+1] - windowHeight/2)) ? 
+        $(elm).addClass('active') : $(elm).removeClass('active')
+    } else {
+      (st > offSets[i] - windowHeight/2) ? $(elm).addClass('active') : $(elm).removeClass('active')
+    }
+  })
+
+  elements.forEach((elm) => {
+    if(elm.options.effect === "stickyLogo" && elm.options.target !== undefined) {
+      ($(elm.options.target).offset().top + elm.options.offset < st) ? 
+        $(elm.container).addClass('active') : $(elm.container).removeClass('active')
+    }
+  })
+
+
+    // , offSets = []
+    // , detects = []
+  
+  // elements.each((i, element) => { 
+  //   const options = element.attr('data-animate-options')
+  //   console.log(options)
+  // })
 }
 
 genContents()
 genNav()
-initialStyles()
+init()
 scrollDetect()
 
-win.resize( _ =>  { initialStyles() });
+// win.resize( _ =>  { initialStyles() });
 win.scroll( _ =>  { scrollDetect() });

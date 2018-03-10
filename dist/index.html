@@ -9,7 +9,7 @@
     <main id="app">
 
       <!-- Main Sticky Nav -->
-      <nav id="sticky-menu">
+      <nav id="sticky-menu" class="cool-parallax" data-animate='{"effect":"stickyLogo", "target":".section-about", "offset":-200}'>
         <!-- <img src="#" id="logo"> -->
         <div id="logo">Vendeloo</div>
         <ul>
@@ -25,17 +25,18 @@
       <!-- Nav Indicators -->
       <div id="prx-nav" class="nav">
         <ul>
-          <li class="active"></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li class="" data-for="section-landing"></li>
+          <li data-for="section-about"></li>
+          <li data-for="section-services"></li>
+          <li data-for="section-clients"></li>
+          <li data-for="section-contact"></li>
         </ul>
       </div>
       
-      <section class="section-landing">
+      <section class="chapter section-landing">
         video...
       </section>
-      <section class="section-about">
+      <section class="chapter section-about">
         <h2>ABOUT</h2>
         <div class="line"></div>
         <p class="" id="about01"></p>
@@ -44,15 +45,15 @@
           <!-- Hidden Section... -->
         </div>
       </section>
-      <section class="section-services">
+      <section class="chapter section-services cool-parallax" data-animate='{"effect":"fadein", "offset":30}'>
         <h2>SERVICES</h2>
         <div class="line"></div>
       </section>
-      <section class="section-clients">
+      <section class="chapter section-clients test">
         <h2>CLIENTS</h2>
         <div class="line"></div>
       </section>
-      <section class="section-contact">
+      <section class="chapter section-contact">
         <h2>CONTACT</h2>
         <div class="line"></div>
       </section>

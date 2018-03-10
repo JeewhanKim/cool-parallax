@@ -30,7 +30,7 @@
     display: none;
     @include transition(.5s, cubic-bezier(.77,0,.175,1), 0s);
   }
-  &.sticky {
+  &.active {
     #logo {
       opacity: 1;
       display: block;
@@ -42,7 +42,6 @@
   }
   ul {
     top: auto;
-    // right: 0;
     bottom: 0;
     -webkit-transform: none;
     -ms-transform: none;
@@ -51,7 +50,7 @@
     padding: 20px;
     margin: 0;
     list-style: none;
-    width: 500px;
+    width: 360px;
     left: 50%;
     transform: translateX(-50%);
     @include transition(.5s, cubic-bezier(.77,0,.175,1), 0s);
@@ -99,14 +98,14 @@
     cursor: pointer;
     &:after {
       content: '';
-      border: 0.75px solid $themeColor;
+      border: 1px solid $themeColor;
       border-radius: 50px;
       -webkit-border-radius: 50px;
       -moz-border-radius: 50px;
-      height: 8px;
-      width: 2px;
+      height: 10px;
+      width: 4px;
       display: inline-block;
-      padding: 0 0 0 5px;
+      padding: 0 0 0 6px;
       position: relative;
       top: 2px;
       @include transition(.5s, 'cubic', 0s);
