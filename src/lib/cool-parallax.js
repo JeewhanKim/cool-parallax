@@ -1,6 +1,8 @@
-/* Cool Parallax */
-/* Demo Page */
-
+/* 
+* Cool Parallax
+* version 0.5.0
+* by Jeewhan Kim (webdeveloper.jee@gmail.com)
+*/
 const win = $(window)
 const doc = $(document)
 const nav = $('.nav')
@@ -19,15 +21,9 @@ class Elements {
   }
 }
 
-
-
 const genContents = () => {
   if(contents === undefined) return
   $.map(contents, (val,prop) => {$(`#${prop}`).html(val)})
-}
-
-const genNav = () => {
-
 }
 
 const init = () => {
@@ -56,11 +52,10 @@ const init = () => {
 }
 
 const scrollDetect = () => {
-  // console.log('scrollDetect')
   const st = $(window).scrollTop()
   const windowHeight = window.innerHeight 
 
-  /* Chapter Active Detection */
+  /* Chapter indicators */
   navButtons.each((i, elm) => {
     if(i === 0) {
       (st <= offSets[i+1] - windowHeight/2) ? $(elm).addClass('active') : $(elm).removeClass('active')
@@ -72,6 +67,7 @@ const scrollDetect = () => {
     }
   })
 
+  /* cool parallax animation handler */
   elements.forEach((elm) => {
     const o = elm.options
     if(o.effect === "stickyLogo" && o.target !== undefined) {
@@ -84,24 +80,11 @@ const scrollDetect = () => {
       } else if(!o.once){
         $(elm.container).removeClass(o.class)
       }
-        
     }
   })
-
-
-    // , offSets = []
-    // , detects = []
-  
-  // elements.each((i, element) => { 
-  //   const options = element.attr('data-animate-options')
-  //   console.log(options)
-  // })
 }
 
 genContents()
-genNav()
 init()
 scrollDetect()
-
-// win.resize( _ =>  { initialStyles() });
 win.scroll( _ =>  { scrollDetect() });

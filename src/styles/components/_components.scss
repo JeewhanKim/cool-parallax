@@ -58,12 +58,11 @@ section {
       }
     }
   }
+  &.section {
+    @import 'sectionLanding';
+    @import 'sectionAbout';
+    @import 'sectionServices';
+    @import 'sectionClients';
+    @import 'sectionContact';
+  }
 }
-.section {
-  @import 'sectionLanding';
-  @import 'sectionAbout';
-  @import 'sectionServices';
-  @import 'sectionClients';
-  @import 'sectionContact';
-}
-// @import 'parallax';
