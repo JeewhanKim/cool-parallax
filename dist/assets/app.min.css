@@ -128,11 +128,8 @@
 h2 {
   margin: 0; }
 
-p {
-  padding: 0;
-  margin: 0; }
-
 body {
+  font-family: 'Montserrat', sans-serif;
   background-color: #ebebeb; }
 
 main {
@@ -148,6 +145,13 @@ section {
     margin: 0 auto;
     z-index: 200;
     text-align: center; }
+  section p {
+    padding: 0;
+    width: 75%;
+    max-width: 730px;
+    min-width: 300px;
+    letter-spacing: 0.085em;
+    line-height: 1.65rem; }
   section h2 {
     text-align: center;
     -webkit-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;

@@ -2,11 +2,9 @@
 h2 {
   margin: 0;
 }
-p {
-  padding: 0;
-  margin: 0;
-}
+
 body {
+  font-family: 'Montserrat', sans-serif;
   background-color: $themeBackgroundColor;
 }
 main {
@@ -22,6 +20,14 @@ section {
     margin: 0 auto;
     z-index: 200;
     text-align: center;
+  }
+  p {
+    padding: 0;
+    width: 75%;
+    max-width: 730px;
+    min-width: 300px;
+    letter-spacing: 0.085em;
+    line-height: 1.65rem;
   }
   h2 {
     text-align: center;
