@@ -1,3 +1,18 @@
+/* Style Initializer */
+html,
+body {
+  margin: 0;
+  padding: 0; }
+
+ul {
+  list-style: none; }
+
+h1, h2, h3, h4 {
+  margin: 0; }
+
+section, p, ul, li {
+  padding: 0; }
+
 #sticky-menu ul li a {
   display: inline;
   position: relative;
@@ -125,9 +140,6 @@
     .nav li:hover:after, .nav li.active:after {
       background: black; }
 
-h2 {
-  margin: 0; }
-
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: #ebebeb; }
@@ -180,84 +192,71 @@ section {
     section .line.animate:after {
       width: 100px;
       transform: translateX(-50%); }
-
-.section-landing {
-  background-color: #ebebeb;
-  width: 100%;
-  min-height: 500px; }
-
-.section-about {
-  width: 100%;
-  min-height: 500px;
-  position: relative; }
-  .section-about:before {
-    position: absolute;
-    content: '';
-    display: block;
-    -webkit-transform-origin: left top;
-    -ms-transform-origin: left top;
-    transform-origin: left top;
-    -webkit-transform: rotate(-5deg);
-    -ms-transform: rotate(-5deg);
-    transform: rotate(-5deg);
-    left: 0;
-    background: white;
-    z-index: 150;
-    width: 120%;
-    height: 225px;
-    top: 0; }
-
-.section-services {
-  width: 100%;
-  min-height: 500px;
-  background-color: #ebebeb; }
-  .section-services:before {
-    position: absolute;
-    content: '';
-    display: block;
-    -webkit-transform-origin: right top;
-    -ms-transform-origin: right top;
-    transform-origin: right top;
-    -webkit-transform: rotate(5deg);
-    -ms-transform: rotate(5deg);
-    transform: rotate(5deg);
-    right: 0;
-    background: #ebebeb;
-    z-index: 150;
-    width: 120%;
-    height: 225px;
-    top: 0; }
-
-.section-clients {
-  width: 100%;
-  min-height: 500px;
-  background-color: white; }
-
-.section-contact {
-  width: 100%;
-  min-height: 500px;
-  background-color: #ebebeb; }
-  .section-contact:before {
-    position: absolute;
-    content: '';
-    display: block;
-    -webkit-transform-origin: left top;
-    -ms-transform-origin: left top;
-    transform-origin: left top;
-    -webkit-transform: rotate(-5deg);
-    -ms-transform: rotate(-5deg);
-    transform: rotate(-5deg);
-    left: 0;
-    background: #ebebeb;
-    z-index: 150;
-    width: 120%;
-    height: 225px;
-    top: 0; }
-
-html,
-body {
-  margin: 0;
-  padding: 0; }
-
-ul {
-  list-style: none; }
+  section.section-landing {
+    background-color: #ebebeb;
+    width: 100%;
+    min-height: 500px; }
+  section.section-about {
+    width: 100%;
+    min-height: 500px;
+    position: relative; }
+    section.section-about:before {
+      position: absolute;
+      content: '';
+      display: block;
+      -webkit-transform-origin: left top;
+      -ms-transform-origin: left top;
+      transform-origin: left top;
+      -webkit-transform: rotate(-5deg);
+      -ms-transform: rotate(-5deg);
+      transform: rotate(-5deg);
+      left: 0;
+      background: white;
+      z-index: 150;
+      width: 120%;
+      height: 225px;
+      top: 0; }
+  section.section-services {
+    width: 100%;
+    min-height: 500px;
+    background-color: #ebebeb; }
+    section.section-services:before {
+      position: absolute;
+      content: '';
+      display: block;
+      -webkit-transform-origin: right top;
+      -ms-transform-origin: right top;
+      transform-origin: right top;
+      -webkit-transform: rotate(5deg);
+      -ms-transform: rotate(5deg);
+      transform: rotate(5deg);
+      right: 0;
+      background: #ebebeb;
+      z-index: 150;
+      width: 120%;
+      height: 225px;
+      top: 0; }
+  section.section-clients {
+    width: 100%;
+    min-height: 500px;
+    background-color: white; }
+  section.section-contact {
+    width: 100%;
+    min-height: 500px;
+    background-color: #ebebeb; }
+    section.section-contact:before {
+      position: absolute;
+      content: '';
+      display: block;
+      -webkit-transform-origin: left top;
+      -ms-transform-origin: left top;
+      transform-origin: left top;
+      -webkit-transform: rotate(-5deg);
+      -ms-transform: rotate(-5deg);
+      transform: rotate(-5deg);
+      left: 0;
+      background: #ebebeb;
+      z-index: 150;
+      width: 120%;
+      height: 225px;
+      top: 0; }

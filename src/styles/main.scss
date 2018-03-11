@@ -1,20 +1,18 @@
-// @import 'local/local';
-@import 'global/global';
-@import 'components/components';
-
+/* Style Initializer */
 html,
 body {
   margin: 0;
   padding: 0;
 }
-
 ul {
   list-style: none;
 }
+h1, h2, h3, h4 {
+  margin: 0;
+}
+section, p, ul, li {
+  padding: 0;
+}
 
-// @include type(disclaimer);
-// @include mqm() {
-//     margin-left: auto;
-//     margin-right: auto;
-// }
-
+@import 'global/global';
+@import 'components/components';
