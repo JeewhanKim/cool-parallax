@@ -1,0 +1,6 @@
+&-contact {
+  width: 100%;
+  min-height: 500px;
+  background-color: $themeBackgroundColor;
+  @include diagonal('left', $themeBackgroundColor);
+}

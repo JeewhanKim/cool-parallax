@@ -1,0 +1,120 @@
+/* Main Nav */
+#sticky-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 100%;
+  text-align: center;
+  z-index: 1000;
+  background: #FFF;
+  // transition: .7s cubic-bezier(.77,0,.175,1);
+  z-index: 9000;
+  a {
+    color: black;
+    text-decoration: none;
+    padding: 0;
+  }
+  &:before {
+    height: 80px;
+    content: '';
+    display: block;
+    background: #FFF;
+    border-bottom: 1px solid $themeBackgroundColor;
+  }
+  #logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    display: none;
+    @include transition(.5s, cubic-bezier(.77,0,.175,1), 0s);
+  }
+  &.active {
+    #logo {
+      opacity: 1;
+      display: block;
+    }
+    ul{
+      left: 100%;
+      transform: translateX(-100%);
+    }
+  }
+  ul {
+    top: auto;
+    bottom: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    position: absolute;
+    padding: 20px;
+    margin: 0;
+    list-style: none;
+    width: 360px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include transition(.5s, cubic-bezier(.77,0,.175,1), 0s);
+    &.sticky {
+      left: 100%;
+      transform: translateX(-100%);
+    }
+    li {
+      margin: 0;
+      padding: 10px 50px;
+      display: inline-block;
+      a {
+        &.active,
+        &:hover {
+          // color: green;
+        }
+        text-transform: uppercase;
+        -webkit-transition: .1s;
+        transition: .1s;
+        font-size: .875em;
+        letter-spacing: .15em;
+        @extend %underline;
+      }
+    }
+  }
+}
+
+/* Main Nav Indicator */
+.nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 22px;
+  text-align: right;
+  z-index: 550;
+  ul {
+    list-style: none;
+  }
+  li {
+    padding-top: 3px;
+    padding-left: 6.5px;
+    padding-right: 6.5px;
+    padding-bottom: 6px;
+    color: white;
+    cursor: pointer;
+    &:after {
+      content: '';
+      border: 1px solid $themeColor;
+      border-radius: 50px;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      height: 10px;
+      width: 4px;
+      display: inline-block;
+      padding: 0 0 0 6px;
+      position: relative;
+      top: 2px;
+      @include transition(.5s, 'cubic', 0s);
+    }
+    &:hover,
+    &.active {
+      &:after {
+        background: $themeColor;
+      }
+    }
+  }
+}
