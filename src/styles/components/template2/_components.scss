@@ -1,16 +1,21 @@
 @import 'nav';
 body {
   font-family: 'Montserrat', sans-serif;
-  // background-color: $themeBackgroundColor;
 }
 main {
   overflow-x: hidden;
-  background-color: white;
+  // background-color: white;
+  color: $themeColor2;
+  max-width: 1440px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+a, a:hover, a:visited {
+  color: $themeColor2;
 }
 section {
   position: relative;
-  // padding-top: 50px;
-  max-width: 1440px;
+  // max-width: 1440px;
   margin: 0 auto;
   &:after {
     content: "";
@@ -19,9 +24,7 @@ section {
   }
   > * {
     position: relative;
-    
     z-index: 200;
-    // text-align: center;
     &.section-left {
       float: left;
       width: 360/14.40 + %;
@@ -40,9 +43,7 @@ section {
   }
   p {
     padding: 0;
-    width: 75%;
-    max-width: 730px;
-    min-width: 300px;
+    width: 100%;
     letter-spacing: 0.025em;
     line-height: 1.65rem;
     font-size: 16px;
@@ -60,13 +61,18 @@ section {
       margin-top: 0;
       opacity: 1;
     }
+    &.static {
+      opacity: 1;
+      margin: 0;
+      padding-bottom: 16px;
+    }
   }
   .line {
     &:after {
       content: '';
       display: inline-block;
       width: 0;
-      background: $themeColor2;;
+      background: $themeColor2;
       height: 4px;
       margin: 8px auto 32px auto;
       @include transition(.5s, cubic-bezier(.77,0,.175,1), 0s);
@@ -80,10 +86,12 @@ section {
     }
   }
   &.section {
-    @import 'sectionLanding';
+    @import 'sectionVideo';
+    @import 'sectionMain';
     @import 'sectionAbout';
     @import 'sectionServices';
+    @import 'sectionPrincipals';
     @import 'sectionClients';
-    @import 'sectionContact';
+    @import 'sectionContacts';
   }
 }

@@ -145,11 +145,16 @@ body {
 
 main {
   overflow-x: hidden;
-  background-color: white; }
+  color: #efae8f;
+  max-width: 1440px;
+  padding: 0 30px;
+  margin: 0 auto; }
+
+a, a:hover, a:visited {
+  color: #efae8f; }
 
 section {
   position: relative;
-  max-width: 1440px;
   margin: 0 auto; }
   section:after {
     content: "";
@@ -172,9 +177,7 @@ section {
       padding-right: 20px; }
   section p {
     padding: 0;
-    width: 75%;
-    max-width: 730px;
-    min-width: 300px;
+    width: 100%;
     letter-spacing: 0.025em;
     line-height: 1.65rem;
     font-size: 16px;
@@ -192,6 +195,10 @@ section {
     section h2.animate {
       margin-top: 0;
       opacity: 1; }
+    section h2.static {
+      opacity: 1;
+      margin: 0;
+      padding-bottom: 16px; }
   section .line:after {
     content: '';
     display: inline-block;
@@ -205,71 +212,14 @@ section {
     transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s; }
   section .line.animate:after {
     width: 40px; }
-  section.section-landing {
-    background-color: #ebebeb;
-    width: 100%;
-    min-height: 500px; }
-  section.section-about {
-    width: 100%;
-    min-height: 500px;
-    position: relative; }
-    section.section-about:before {
-      position: absolute;
-      content: '';
-      display: block;
-      -webkit-transform-origin: left top;
-      -ms-transform-origin: left top;
-      transform-origin: left top;
-      -webkit-transform: rotate(-5deg);
-      -ms-transform: rotate(-5deg);
-      transform: rotate(-5deg);
-      left: 0;
-      background: white;
-      z-index: 150;
-      width: 120%;
-      height: 225px;
-      top: 0; }
-  section.section-services {
-    width: 100%;
-    min-height: 500px;
-    background-color: #ebebeb; }
-    section.section-services:before {
-      position: absolute;
-      content: '';
-      display: block;
-      -webkit-transform-origin: right top;
-      -ms-transform-origin: right top;
-      transform-origin: right top;
-      -webkit-transform: rotate(5deg);
-      -ms-transform: rotate(5deg);
-      transform: rotate(5deg);
-      right: 0;
-      background: #ebebeb;
-      z-index: 150;
-      width: 120%;
-      height: 225px;
-      top: 0; }
-  section.section-clients {
-    width: 100%;
-    min-height: 500px;
-    background-color: white; }
-  section.section-contact {
-    width: 100%;
-    min-height: 500px;
-    background-color: #ebebeb; }
-    section.section-contact:before {
-      position: absolute;
-      content: '';
-      display: block;
-      -webkit-transform-origin: left top;
-      -ms-transform-origin: left top;
-      transform-origin: left top;
-      -webkit-transform: rotate(-5deg);
-      -ms-transform: rotate(-5deg);
-      transform: rotate(-5deg);
-      left: 0;
-      background: #ebebeb;
-      z-index: 150;
-      width: 120%;
-      height: 225px;
-      top: 0; }
+  section.section-services .services-list {
+    position: relative;
+    width: 100%; }
+    section.section-services .services-list > div {
+      width: 50%;
+      float: left; }
+    section.section-services .services-list h4 {
+      margin-bottom: 0.5rem;
+      color: #efae8f; }
+  section.section-principals {
+    width: 100%; }
