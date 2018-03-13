@@ -1,7 +1,7 @@
 @import 'nav';
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: $themeBackgroundColor;
+  // background-color: $themeBackgroundColor;
 }
 main {
   overflow-x: hidden;
@@ -9,48 +9,73 @@ main {
 }
 section {
   position: relative;
-  padding-top: 50px;
+  // padding-top: 50px;
+  max-width: 1440px;
+  margin: 0 auto;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
   > * {
     position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
+    
     z-index: 200;
-    text-align: center;
+    // text-align: center;
+    &.section-left {
+      float: left;
+      width: 360/14.40 + %;
+    }
+    &.section-right {
+      float: right;
+      width: 956/14.40 + %;
+      margin-top: 42px;
+      margin-bottom: 70px;
+    }
+    .section-wrap {
+      display: block;
+      text-align: right;
+      padding-right: 20px;
+    }
   }
   p {
     padding: 0;
     width: 75%;
     max-width: 730px;
     min-width: 300px;
-    letter-spacing: 0.085em;
+    letter-spacing: 0.025em;
     line-height: 1.65rem;
+    font-size: 16px;
+    margin: 0 0 1rem 0;
+    color: $themeColor2;
   }
   h2 {
-    text-align: center;
+    // text-align: center;
     @include transition(.5s, cubic-bezier(.77,0,.175,1), 0s);
-    top: 20px;
+    margin-top: 10px;
     opacity: 0;
-    font-size: 60px;
+    font-size: 16px;
+    color: $themeColor2;
     &.animate {
-      top: 0;
+      margin-top: 0;
       opacity: 1;
     }
   }
   .line {
     &:after {
       content: '';
-      display: block;
+      display: inline-block;
       width: 0;
-      background: #1D1D1F;
+      background: $themeColor2;;
       height: 4px;
-      margin: 70px auto;
+      margin: 8px auto 32px auto;
       @include transition(.5s, cubic-bezier(.77,0,.175,1), 0s);
     }
     &.animate {
-      width: 0;
+      // width: 0;
       &:after {
-        width: 100px;
-        transform: translateX(-50%);
+        width: 40px;
+        // transform: translateX(-50%);
       }
     }
   }

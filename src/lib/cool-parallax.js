@@ -22,7 +22,7 @@ class Elements {
 }
 
 const genContents = () => {
-  if(contents === undefined) return
+  if(typeof contents === 'undefined') return
   $.map(contents, (val,prop) => {$(`#${prop}`).html(val)})
 }
 
