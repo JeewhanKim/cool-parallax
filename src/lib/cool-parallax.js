@@ -89,6 +89,7 @@ const scrollDetect = () => {
 }
 
 let menuVisible = false
+let currentChapter = 0
 
 const navClickEvents = () => {
   $('#sticky-menu a').click((e) => {
@@ -103,31 +104,48 @@ const navClickEvents = () => {
       $('html, body').animate({
         scrollTop: 0
       }, 200);
-
       if(targetLinkTo === '#principals') {
+        currentChapter = 1
         $('.section-clients, .section-contacts').fadeOut()
         $('.section-principals').delay(400).fadeIn()
       }
       if(targetLinkTo === '#clients') {
+        currentChapter = 2
         $('.section-principals, .section-contacts').fadeOut()
         $('.section-clients').delay(400).fadeIn()
       }
       if(targetLinkTo === '#contacts') {
+        currentChapter = 3
         $('.section-principals, .section-clients').fadeOut()
         $('.section-contacts').delay(400).fadeIn()
       }
     } else {
-      $('.section-principals, .section-clients, .section-contacts').fadeOut()
-      $('.section-video, .section-main, .section-about, .section-services').delay(400).fadeIn()
-      $('html, body').animate({
-        scrollTop: $(targetLinkTo).offset().top
-      }, 400);
+      if(currentChapter != 0) {
+        $('.section-principals, .section-clients, .section-contacts').fadeOut()
+        $('.section-video, .section-main, .section-about, .section-services').delay(400).fadeIn(400, () => {
+          $('html, body').animate({
+            scrollTop: $(targetLinkTo).offset().top
+          }, 600);
+        })
+      } else {
+        $('html, body').animate({
+          scrollTop: $(targetLinkTo).offset().top
+        }, 600);
+      }
+      currentChapter = 0
     }
     // console.log($(e.currentTarget).attr('href'));
   })
   $('#logo').click(() => {
     !$('#sticky-menu').hasClass('active') ? $('#sticky-menu').addClass('active') : $('#sticky-menu').removeClass('active')
     // $('#logo').siblings().css('opacity', menuVisible ? 1 : 0)
+  })
+  $('.emailSubmit').click((e) => {
+    const $tg = $(e.currentTarget).parent()
+    const mailto = $tg.find('.vl-email').html()
+    const subject = $tg.find('.subject').val()
+    const body = $tg.find('.content').val()
+    window.open(`mailto:${mailto}?subject=${subject}&body=${body}`)
   })
 }
 

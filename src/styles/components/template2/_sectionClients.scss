@@ -1,4 +1,22 @@
 &-clients {
   display: none;
   width: 100%;
+  padding-top: 230px;
+  padding-bottom: 230px;
+  h2 {
+    color: $themeColor2;
+  }
+  .line {
+    padding-top: 52px;
+    padding-bottom: 35px;
+  }
+  p {
+    padding: 0;
+    margin: 0;
+  }
+  .client-list {
+    font-size: 60px;
+    line-height: 80px;
+    letter-spacing: 0.025em;
+  }
 }

@@ -205,7 +205,7 @@ section {
     section h2.static {
       opacity: 1;
       margin: 0;
-      padding-bottom: 16px; }
+      padding-bottom: 30px; }
   section .line:after {
     content: '';
     display: inline-block;
@@ -220,21 +220,88 @@ section {
   section .line.animate:after {
     width: 40px; }
   section.section-video {
-    min-height: 500px; }
-  section.section-services .services-list {
-    position: relative;
-    width: 100%; }
-    section.section-services .services-list > div {
-      width: 50%;
-      float: left; }
-    section.section-services .services-list h4 {
-      margin-bottom: 0.5rem; }
+    min-height: 500px;
+    padding-top: 230px; }
+  section.section-services {
+    padding-bottom: 230px; }
+    section.section-services .services-list {
+      position: relative;
+      width: 100%; }
+      section.section-services .services-list > div {
+        width: 50%;
+        float: left; }
+      section.section-services .services-list h4 {
+        margin-bottom: 0.5rem; }
   section.section-principals {
     display: none;
-    width: 100%; }
+    width: 100%;
+    padding-top: 230px;
+    padding-bottom: 230px; }
+    section.section-principals h2 {
+      color: #efae8f; }
+    section.section-principals p {
+      padding: 0;
+      margin: 0; }
+    section.section-principals .principals-sub {
+      padding-top: 166px; }
+      section.section-principals .principals-sub:first-child {
+        padding-top: 106px; }
+      section.section-principals .principals-sub h3 {
+        font-size: 28px;
+        line-height: 32px;
+        letter-spacing: 0.025em;
+        padding-bottom: 48px; }
   section.section-clients {
     display: none;
-    width: 100%; }
+    width: 100%;
+    padding-top: 230px;
+    padding-bottom: 230px; }
+    section.section-clients h2 {
+      color: #efae8f; }
+    section.section-clients .line {
+      padding-top: 52px;
+      padding-bottom: 35px; }
+    section.section-clients p {
+      padding: 0;
+      margin: 0; }
+    section.section-clients .client-list {
+      font-size: 60px;
+      line-height: 80px;
+      letter-spacing: 0.025em; }
   section.section-contacts {
     display: none;
-    width: 100%; }
+    width: 100%;
+    padding-top: 230px;
+    padding-bottom: 230px; }
+    section.section-contacts h2 {
+      color: #efae8f; }
+    section.section-contacts .section-right {
+      margin-top: 11px; }
+    section.section-contacts .contact-form {
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: 0.025em;
+      width: 100%;
+      max-width: 400px;
+      padding-bottom: 72px; }
+      section.section-contacts .contact-form div.vl-name, section.section-contacts .contact-form div.vl-email, section.section-contacts .contact-form div.vl-phone {
+        display: inline; }
+      section.section-contacts .contact-form input,
+      section.section-contacts .contact-form textarea {
+        color: #638ea3;
+        display: block;
+        padding: 10px;
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #638ea3;
+        box-sizing: border-box; }
+      section.section-contacts .contact-form textarea {
+        resize: none; }
+      section.section-contacts .contact-form .emailSubmit {
+        color: white;
+        background-color: #638ea3;
+        font-size: 20px;
+        line-height: 32px;
+        letter-spacing: 0.025em;
+        padding: 0 6px; }

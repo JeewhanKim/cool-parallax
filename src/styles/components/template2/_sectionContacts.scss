@@ -1,4 +1,49 @@
 &-contacts {
   display: none;
   width: 100%;
+  padding-top: 230px;
+  padding-bottom: 230px;
+  h2 {
+    color: $themeColor2;
+  }
+  .section-right {
+    margin-top: 11px;
+  }
+  .contact-form {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0.025em;
+    width: 100%;
+    max-width: 400px;
+    padding-bottom: 72px;
+    div {
+      &.vl-name, 
+      &.vl-email, 
+      &.vl-phone {
+        display: inline;
+      }
+    }
+    input,
+    textarea {
+      color: $themeColor2Main;
+      display: block;
+      padding: 10px;
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      border: 1px solid $themeColor2Main;
+      box-sizing: border-box;
+    }
+    textarea {
+      resize: none;
+    }
+    .emailSubmit {
+      color: white;
+      background-color: $themeColor2Main;
+      font-size: 20px;
+      line-height: 32px;
+      letter-spacing: 0.025em;
+      padding: 0 6px;
+    }
+  }
 }
