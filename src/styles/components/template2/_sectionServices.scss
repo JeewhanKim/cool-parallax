@@ -7,9 +7,10 @@
       float: left;
     }
     h4 {
+      @extend %fontStyleRubik;
       // font-weight: 800;
       margin-bottom: 0.5rem;
-      color: $themeColor2;
+      // color: $themeColor2;
     }
   }
 }

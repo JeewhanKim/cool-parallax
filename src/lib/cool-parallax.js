@@ -26,6 +26,10 @@ const genContents = () => {
   $.map(contents, (val,prop) => {$(`#${prop}`).html(val)})
 }
 
+const chapterInitial = () => {
+
+}
+
 const init = () => {
   $('.cool-parallax').each((i, elm) => {
     let obj = new Elements()
@@ -84,6 +88,51 @@ const scrollDetect = () => {
   })
 }
 
+let menuVisible = false
+
+const navClickEvents = () => {
+  $('#sticky-menu a').click((e) => {
+    e.preventDefault()
+    const $target = $(e.currentTarget)
+    $target.parent().parent().find('a').removeClass('active')
+    $target.addClass('active')
+    const targetLinkTo = $target.attr('href')
+
+    if(targetLinkTo === '#principals' || targetLinkTo === '#clients' || targetLinkTo === '#contacts') {
+      $('.section-video, .section-main, .section-about, .section-services').fadeOut()
+      $('html, body').animate({
+        scrollTop: 0
+      }, 200);
+
+      if(targetLinkTo === '#principals') {
+        $('.section-clients, .section-contacts').fadeOut()
+        $('.section-principals').delay(400).fadeIn()
+      }
+      if(targetLinkTo === '#clients') {
+        $('.section-principals, .section-contacts').fadeOut()
+        $('.section-clients').delay(400).fadeIn()
+      }
+      if(targetLinkTo === '#contacts') {
+        $('.section-principals, .section-clients').fadeOut()
+        $('.section-contacts').delay(400).fadeIn()
+      }
+    } else {
+      $('.section-principals, .section-clients, .section-contacts').fadeOut()
+      $('.section-video, .section-main, .section-about, .section-services').delay(400).fadeIn()
+      $('html, body').animate({
+        scrollTop: $(targetLinkTo).offset().top
+      }, 400);
+    }
+    // console.log($(e.currentTarget).attr('href'));
+  })
+  $('#logo').click(() => {
+    !$('#sticky-menu').hasClass('active') ? $('#sticky-menu').addClass('active') : $('#sticky-menu').removeClass('active')
+    // $('#logo').siblings().css('opacity', menuVisible ? 1 : 0)
+  })
+}
+
+chapterInitial()
+navClickEvents()
 genContents()
 init()
 scrollDetect()

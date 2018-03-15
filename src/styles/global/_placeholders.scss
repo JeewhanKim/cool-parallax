@@ -21,7 +21,7 @@
     right: 0;
     width: 0;
     bottom: -5px;
-    background: #000;
+    background: $themeColor2;
     height: 2px;
     transition-property: width;
     transition-duration: 0.3s;
@@ -35,4 +35,16 @@
     right: auto;
     width: 100%;
   }
+}
+%fontStyleMontserrat {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+  letter-spacing: 0.095px;
+  line-height: 54.13px;
+}
+%fontStyleRubik {
+  font-family: 'Rubik', sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0.025em;
 }

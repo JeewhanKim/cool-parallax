@@ -25,7 +25,7 @@ section, p, ul, li {
   right: 0;
   width: 0;
   bottom: -5px;
-  background: #000;
+  background: #efae8f;
   height: 2px;
   transition-property: width;
   transition-duration: 0.3s;
@@ -35,6 +35,18 @@ section, p, ul, li {
   left: 0;
   right: auto;
   width: 100%; }
+
+section h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+  letter-spacing: 0.095px;
+  line-height: 54.13px; }
+
+section p, section.section-services .services-list h4 {
+  font-family: 'Rubik', sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+  letter-spacing: 0.025em; }
 
 /* Main Nav */
 #sticky-menu {
@@ -48,21 +60,14 @@ section, p, ul, li {
   background: #FFF;
   z-index: 9000; }
   #sticky-menu a {
-    color: black;
+    color: #638ea3;
     text-decoration: none;
     padding: 0; }
   #sticky-menu:before {
-    height: 80px;
-    content: '';
-    display: block;
     background: #FFF;
-    border-bottom: 1px solid #ebebeb; }
+    border-bottom: 1px solid #efae8f; }
   #sticky-menu #logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    display: none;
+    cursor: pointer;
     -webkit-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     -moz-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     -o-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
@@ -70,39 +75,47 @@ section, p, ul, li {
   #sticky-menu.active #logo {
     opacity: 1;
     display: block; }
-  #sticky-menu.active ul {
-    left: 100%;
-    transform: translateX(-100%); }
+  #sticky-menu.active ul li {
+    opacity: 0; }
   #sticky-menu ul {
-    top: auto;
+    overflow: visible;
+    opacity: 1;
     bottom: 0;
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
     position: absolute;
-    padding: 20px;
+    padding: 20px 0;
     margin: 0;
     list-style: none;
-    width: 360px;
-    left: 50%;
+    width: 140px;
+    right: 0;
+    top: 0;
     transform: translateX(-50%);
     -webkit-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     -moz-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     -o-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s; }
-    #sticky-menu ul.sticky {
-      left: 100%;
-      transform: translateX(-100%); }
     #sticky-menu ul li {
+      background: rgba(255, 255, 255, 0.75);
       margin: 0;
-      padding: 10px 50px;
-      display: inline-block; }
+      padding: 5px 10px;
+      display: inline-block;
+      width: 100%;
+      opacity: 1;
+      -webkit-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+      -moz-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+      -o-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+      transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s; }
       #sticky-menu ul li a {
-        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 22px;
+        line-height: 36px;
+        letter-spacing: 0.095em;
         -webkit-transition: .1s;
-        transition: .1s;
-        font-size: .875em;
-        letter-spacing: .15em; }
+        transition: .1s; }
+        #sticky-menu ul li a.active, #sticky-menu ul li a:hover {
+          color: #efae8f; }
 
 /* Main Nav Indicator */
 .nav {
@@ -123,7 +136,7 @@ section, p, ul, li {
     cursor: pointer; }
     .nav li:after {
       content: '';
-      border: 1px solid black;
+      border: 1px solid #efae8f;
       border-radius: 50px;
       -webkit-border-radius: 50px;
       -moz-border-radius: 50px;
@@ -138,20 +151,20 @@ section, p, ul, li {
       -o-transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
       transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s; }
     .nav li:hover:after, .nav li.active:after {
-      background: black; }
+      background: #efae8f; }
 
 body {
   font-family: 'Montserrat', sans-serif; }
 
 main {
   overflow-x: hidden;
-  color: #efae8f;
+  color: #638ea3;
   max-width: 1440px;
   padding: 0 30px;
   margin: 0 auto; }
 
 a, a:hover, a:visited {
-  color: #efae8f; }
+  color: #638ea3; }
 
 section {
   position: relative;
@@ -169,8 +182,8 @@ section {
     section > *.section-right {
       float: right;
       width: 66.38889%;
-      margin-top: 42px;
-      margin-bottom: 70px; }
+      margin-top: 49px;
+      margin-bottom: 150px; }
     section > * .section-wrap {
       display: block;
       text-align: right;
@@ -178,20 +191,14 @@ section {
   section p {
     padding: 0;
     width: 100%;
-    letter-spacing: 0.025em;
-    line-height: 1.65rem;
-    font-size: 16px;
-    margin: 0 0 1rem 0;
-    color: #efae8f; }
+    margin: 0 0 22px 0; }
   section h2 {
     -webkit-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     -moz-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     -o-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     margin-top: 10px;
-    opacity: 0;
-    font-size: 16px;
-    color: #efae8f; }
+    opacity: 0; }
     section h2.animate {
       margin-top: 0;
       opacity: 1; }
@@ -203,15 +210,17 @@ section {
     content: '';
     display: inline-block;
     width: 0;
-    background: #efae8f;
+    background: #638ea3;
     height: 4px;
-    margin: 8px auto 32px auto;
+    margin: 8px auto 20px auto;
     -webkit-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     -moz-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     -o-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s; }
   section .line.animate:after {
     width: 40px; }
+  section.section-video {
+    min-height: 500px; }
   section.section-services .services-list {
     position: relative;
     width: 100%; }
@@ -219,7 +228,13 @@ section {
       width: 50%;
       float: left; }
     section.section-services .services-list h4 {
-      margin-bottom: 0.5rem;
-      color: #efae8f; }
+      margin-bottom: 0.5rem; }
   section.section-principals {
+    display: none;
+    width: 100%; }
+  section.section-clients {
+    display: none;
+    width: 100%; }
+  section.section-contacts {
+    display: none;
     width: 100%; }
