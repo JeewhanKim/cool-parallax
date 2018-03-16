@@ -154,6 +154,11 @@ section p, section.section-services .services-list h4 {
     .nav li:hover:after, .nav li.active:after {
       background: #efad8f; }
 
+@media (max-width: 767px) {
+  #sticky-menu ul {
+    width: 20%;
+    right: 0; } }
+
 body {
   font-family: 'Montserrat', sans-serif; }
 

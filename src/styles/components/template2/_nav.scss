@@ -16,19 +16,10 @@
     padding: 0;
   }
   &:before {
-    // height: 80px;
-    // content: '';
-    // display: block;
     background: #FFF;
     border-bottom: 1px solid $themeColor2;
   }
   #logo {
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // right: 0;
-    // opacity: 0;
-    // display: none;
     cursor: pointer;
     @include transition(.5s, cubic-bezier(.77,0,.175,1), 0s);
   }
@@ -39,11 +30,8 @@
     }
     ul {
       li {
-        // height: 0;
-        // padding: 0;
         opacity: 0;
       }
-      // overflow: hidden;
     }
   }
   ul {
@@ -58,6 +46,7 @@
     margin: 0;
     list-style: none;
     width: 140px;
+
     right: 0;
     top: 0;
     transform: translateX(-50%);
