@@ -159,7 +159,7 @@ body {
 main {
   overflow-x: hidden;
   color: #638ea3;
-  max-width: 720px;
+  max-width: 620px;
   padding: 0 30px;
   margin: 0 auto; }
 
@@ -206,7 +206,7 @@ section {
     section h2.static {
       opacity: 1;
       margin: 0;
-      padding-bottom: 30px; }
+      padding-bottom: 19px; }
   section .line:after {
     content: '';
     display: inline-block;
@@ -244,16 +244,16 @@ section {
       color: #efad8f; }
     section.section-principals p {
       padding: 0;
-      margin: 0; }
+      margin: 0 0 14px 0; }
     section.section-principals .principals-sub {
-      padding-top: 166px; }
+      padding-top: 98px; }
       section.section-principals .principals-sub:first-child {
-        padding-top: 106px; }
+        padding-top: 48px; }
       section.section-principals .principals-sub h3 {
-        font-size: 14px;
+        font-size: 13px;
         line-height: 16px;
         letter-spacing: 0.025em;
-        padding-bottom: 48px; }
+        padding-bottom: 18px; }
   section.section-clients {
     display: none;
     width: 100%;

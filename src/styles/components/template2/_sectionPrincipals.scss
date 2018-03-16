@@ -8,18 +8,18 @@
   }
   p {
     padding: 0;
-    margin: 0;
+    margin: 0 0 14px 0;
   }
   .principals-sub {
-    padding-top: 166px;
+    padding-top: 98px;
     &:first-child {
-      padding-top: 106px;
+      padding-top: 48px;
     }
     h3 {
-      font-size: 14px;
+      font-size: 13px;
       line-height: 16px;
       letter-spacing: 0.025em;
-      padding-bottom: 48px;
+      padding-bottom: 18px;
     }
   }
 }
