@@ -10,6 +10,10 @@ main {
   // background-color: white;
   color: $themeColor2Main;
   max-width: 620px;
+  @include desktop-large() {max-width: 900px;}
+  @include desktop-xlarge() {max-width: 1000px;}
+  @include desktop-xxlarge() {max-width: 1200px;}
+
   padding: 0 30px;
   margin: 0 auto;
 }
@@ -30,11 +34,11 @@ section {
     z-index: 200;
     &.section-left {
       float: left;
-      width: 360/14.40 + %;
+      width: 20%;
     }
     &.section-right {
-      float: right;
-      width: 956/14.40 + %;
+      float: left;
+      width: 80%;
       margin-top: 20px;
       margin-bottom: 40px;
     }
