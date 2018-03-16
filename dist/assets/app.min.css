@@ -262,15 +262,21 @@ section {
     section.section-clients h2 {
       color: #efad8f; }
     section.section-clients .line {
-      padding-top: 52px;
-      padding-bottom: 35px; }
+      padding-top: 30px;
+      padding-bottom: 22px; }
     section.section-clients p {
       padding: 0;
       margin: 0; }
     section.section-clients .client-list {
-      font-size: 15px;
-      line-height: 40px;
+      font-size: 10px;
+      line-height: 30px;
       letter-spacing: 0.025em; }
+      section.section-clients .client-list-left {
+        float: left;
+        width: 67%; }
+      section.section-clients .client-list-right {
+        float: right;
+        width: 33%; }
   section.section-contacts {
     display: none;
     width: 100%;

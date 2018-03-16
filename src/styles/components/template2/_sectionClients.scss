@@ -7,16 +7,25 @@
     color: $themeColor2;
   }
   .line {
-    padding-top: 52px;
-    padding-bottom: 35px;
+    padding-top: 30px;
+    padding-bottom: 22px;
   }
   p {
     padding: 0;
     margin: 0;
   }
   .client-list {
-    font-size: 15px;
-    line-height: 40px;
+    // font-size: 15px;
+    font-size: 10px;
+    line-height: 30px;
     letter-spacing: 0.025em;
+    &-left {
+      float: left;
+      width: 67%;
+    }
+    &-right {
+      float: right;
+      width: 33%;
+    }
   }
 }
