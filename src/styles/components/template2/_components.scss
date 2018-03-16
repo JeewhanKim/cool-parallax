@@ -1,3 +1,4 @@
+// ref: https://codemyui.com/pure-css-text-revealing-animation/
 @import 'nav';
 @import 'mobile';
 body {
@@ -92,5 +93,50 @@ section {
     @import 'sectionPrincipals';
     @import 'sectionClients';
     @import 'sectionContacts';
+  }
+}
+
+/* Animation */
+@keyframes showup {
+  0% {opacity:0;}
+  20% {opacity:1;}
+  80% {opacity:1;}
+  100% {opacity:1;}
+}
+@keyframes slidein {
+  0% { margin-left:-800px; }
+  20% { margin-left:-800px; }
+  35% { margin-left:0px; }
+  100% { margin-left:0px; }
+}
+
+@keyframes reveal {
+  0% {opacity:0;width:0px;}
+  20% {opacity:1;width:0px;}
+  30% {width:100%;}
+  80% {opacity:1;}
+}
+.section-main {
+  .section-right {
+    p, div {
+      display:inline;
+      overflow:hidden;
+      // white-space:nowrap;
+      @extend %fontStyleRubik;
+    }
+    div {
+      animation: showup 2s;
+      animation-iteration-count: 1;
+      &.anim {
+        // width:0px;
+        display: inline-block;
+        animation: reveal 2s;
+        animation-iteration-count: 1;
+        p {
+          // margin-left:-355px;
+          // animation: slidein 7s 1;
+        }
+      }
+    }
   }
 }

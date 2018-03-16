@@ -42,7 +42,7 @@ section h2 {
   letter-spacing: 0.0475px;
   line-height: 12px; }
 
-section p, section.section-services .services-list h4 {
+section p, section.section-services .services-list h4, .section-main .section-right p, .section-main .section-right div {
   font-family: 'Rubik', sans-serif;
   font-size: 10px;
   line-height: 16px;
@@ -323,3 +323,48 @@ section {
         line-height: 16px;
         letter-spacing: 0.025em;
         padding: 0 6px; }
+
+/* Animation */
+@keyframes showup {
+  0% {
+    opacity: 0; }
+  20% {
+    opacity: 1; }
+  80% {
+    opacity: 1; }
+  100% {
+    opacity: 1; } }
+
+@keyframes slidein {
+  0% {
+    margin-left: -800px; }
+  20% {
+    margin-left: -800px; }
+  35% {
+    margin-left: 0px; }
+  100% {
+    margin-left: 0px; } }
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    width: 0px; }
+  20% {
+    opacity: 1;
+    width: 0px; }
+  30% {
+    width: 100%; }
+  80% {
+    opacity: 1; } }
+
+.section-main .section-right p, .section-main .section-right div {
+  display: inline;
+  overflow: hidden; }
+
+.section-main .section-right div {
+  animation: showup 2s;
+  animation-iteration-count: 1; }
+  .section-main .section-right div.anim {
+    display: inline-block;
+    animation: reveal 2s;
+    animation-iteration-count: 1; }
