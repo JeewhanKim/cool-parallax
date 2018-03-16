@@ -1,0 +1,6 @@
+@include mobile() {
+  #sticky-menu ul {
+    width: 20%;
+    right: 0;
+  }
+}
