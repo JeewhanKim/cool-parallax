@@ -1,11 +1,15 @@
 &-services {
-  padding-bottom: 230px;
+  padding-top: 6px;
+  padding-bottom: 120px;
   .services-list {
     position: relative;
     width: 100%;
     > div {
-      width: 50%;
       float: left;
+      width: 60%;
+      &:first-child {
+        width: 40%;
+      }
     }
     h4 {
       @extend %fontStyleRubik;

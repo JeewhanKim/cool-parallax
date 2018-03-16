@@ -76,8 +76,8 @@
       @include transition(.5s, cubic-bezier(.77,0,.175,1), 0s);
       a {
         font-family: 'Montserrat', sans-serif;
-        font-size: 22px;
-        line-height: 36px;
+        font-size: 11px;
+        line-height: 18px;
         letter-spacing: 0.095em;
         &.active,
         &:hover {

@@ -7,7 +7,7 @@ main {
   overflow-x: hidden;
   // background-color: white;
   color: $themeColor2Main;
-  max-width: 1440px;
+  max-width: 720px;
   padding: 0 30px;
   margin: 0 auto;
 }
@@ -33,8 +33,8 @@ section {
     &.section-right {
       float: right;
       width: 956/14.40 + %;
-      margin-top: 49px;
-      margin-bottom: 150px;
+      margin-top: 20px;
+      margin-bottom: 40px;
     }
     .section-wrap {
       display: block;
@@ -46,10 +46,11 @@ section {
     @extend %fontStyleRubik;
     padding: 0;
     width: 100%;
-    margin: 0 0 22px 0;
+    margin: 0 0 14px 0;
   }
   h2 {
     @extend %fontStyleMontserrat;
+    color: $themeColor2;
     @include transition(.5s, cubic-bezier(.77,0,.175,1), 0s);
     margin-top: 10px;
     opacity: 0;
@@ -70,14 +71,14 @@ section {
       display: inline-block;
       width: 0;
       background: $themeColor2Main;
-      height: 4px;
-      margin: 8px auto 20px auto;
+      height: 2px;
+      margin: 0 auto 15px auto;
       @include transition(.5s, cubic-bezier(.77,0,.175,1), 0s);
     }
     &.animate {
       // width: 0;
       &:after {
-        width: 40px;
+        width: 26px;
         // transform: translateX(-50%);
       }
     }

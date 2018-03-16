@@ -25,7 +25,7 @@ section, p, ul, li {
   right: 0;
   width: 0;
   bottom: -5px;
-  background: #efae8f;
+  background: #efad8f;
   height: 2px;
   transition-property: width;
   transition-duration: 0.3s;
@@ -38,14 +38,14 @@ section, p, ul, li {
 
 section h2 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 25px;
-  letter-spacing: 0.095px;
-  line-height: 54.13px; }
+  font-size: 12px;
+  letter-spacing: 0.0475px;
+  line-height: 12px; }
 
 section p, section.section-services .services-list h4 {
   font-family: 'Rubik', sans-serif;
-  font-size: 20px;
-  line-height: 32px;
+  font-size: 10px;
+  line-height: 16px;
   letter-spacing: 0.025em; }
 
 /* Main Nav */
@@ -65,7 +65,7 @@ section p, section.section-services .services-list h4 {
     padding: 0; }
   #sticky-menu:before {
     background: #FFF;
-    border-bottom: 1px solid #efae8f; }
+    border-bottom: 1px solid #efad8f; }
   #sticky-menu #logo {
     cursor: pointer;
     -webkit-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
@@ -109,13 +109,13 @@ section p, section.section-services .services-list h4 {
       transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s; }
       #sticky-menu ul li a {
         font-family: 'Montserrat', sans-serif;
-        font-size: 22px;
-        line-height: 36px;
+        font-size: 11px;
+        line-height: 18px;
         letter-spacing: 0.095em;
         -webkit-transition: .1s;
         transition: .1s; }
         #sticky-menu ul li a.active, #sticky-menu ul li a:hover {
-          color: #efae8f; }
+          color: #efad8f; }
 
 /* Main Nav Indicator */
 .nav {
@@ -136,7 +136,7 @@ section p, section.section-services .services-list h4 {
     cursor: pointer; }
     .nav li:after {
       content: '';
-      border: 1px solid #efae8f;
+      border: 1px solid #efad8f;
       border-radius: 50px;
       -webkit-border-radius: 50px;
       -moz-border-radius: 50px;
@@ -151,7 +151,7 @@ section p, section.section-services .services-list h4 {
       -o-transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
       transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s; }
     .nav li:hover:after, .nav li.active:after {
-      background: #efae8f; }
+      background: #efad8f; }
 
 body {
   font-family: 'Montserrat', sans-serif; }
@@ -159,7 +159,7 @@ body {
 main {
   overflow-x: hidden;
   color: #638ea3;
-  max-width: 1440px;
+  max-width: 720px;
   padding: 0 30px;
   margin: 0 auto; }
 
@@ -182,8 +182,8 @@ section {
     section > *.section-right {
       float: right;
       width: 66.38889%;
-      margin-top: 49px;
-      margin-bottom: 150px; }
+      margin-top: 20px;
+      margin-bottom: 40px; }
     section > * .section-wrap {
       display: block;
       text-align: right;
@@ -191,8 +191,9 @@ section {
   section p {
     padding: 0;
     width: 100%;
-    margin: 0 0 22px 0; }
+    margin: 0 0 14px 0; }
   section h2 {
+    color: #efad8f;
     -webkit-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     -moz-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     -o-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
@@ -211,25 +212,27 @@ section {
     display: inline-block;
     width: 0;
     background: #638ea3;
-    height: 4px;
-    margin: 8px auto 20px auto;
+    height: 2px;
+    margin: 0 auto 15px auto;
     -webkit-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     -moz-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     -o-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s; }
   section .line.animate:after {
-    width: 40px; }
+    width: 26px; }
   section.section-video {
-    min-height: 500px;
-    padding-top: 230px; }
+    min-height: 500px; }
   section.section-services {
-    padding-bottom: 230px; }
+    padding-top: 6px;
+    padding-bottom: 120px; }
     section.section-services .services-list {
       position: relative;
       width: 100%; }
       section.section-services .services-list > div {
-        width: 50%;
-        float: left; }
+        float: left;
+        width: 60%; }
+        section.section-services .services-list > div:first-child {
+          width: 40%; }
       section.section-services .services-list h4 {
         margin-bottom: 0.5rem; }
   section.section-principals {
@@ -238,7 +241,7 @@ section {
     padding-top: 230px;
     padding-bottom: 230px; }
     section.section-principals h2 {
-      color: #efae8f; }
+      color: #efad8f; }
     section.section-principals p {
       padding: 0;
       margin: 0; }
@@ -247,8 +250,8 @@ section {
       section.section-principals .principals-sub:first-child {
         padding-top: 106px; }
       section.section-principals .principals-sub h3 {
-        font-size: 28px;
-        line-height: 32px;
+        font-size: 14px;
+        line-height: 16px;
         letter-spacing: 0.025em;
         padding-bottom: 48px; }
   section.section-clients {
@@ -257,7 +260,7 @@ section {
     padding-top: 230px;
     padding-bottom: 230px; }
     section.section-clients h2 {
-      color: #efae8f; }
+      color: #efad8f; }
     section.section-clients .line {
       padding-top: 52px;
       padding-bottom: 35px; }
@@ -265,8 +268,8 @@ section {
       padding: 0;
       margin: 0; }
     section.section-clients .client-list {
-      font-size: 60px;
-      line-height: 80px;
+      font-size: 15px;
+      line-height: 40px;
       letter-spacing: 0.025em; }
   section.section-contacts {
     display: none;
@@ -274,12 +277,12 @@ section {
     padding-top: 230px;
     padding-bottom: 230px; }
     section.section-contacts h2 {
-      color: #efae8f; }
+      color: #efad8f; }
     section.section-contacts .section-right {
       margin-top: 11px; }
     section.section-contacts .contact-form {
-      font-size: 24px;
-      line-height: 32px;
+      font-size: 12px;
+      line-height: 16px;
       letter-spacing: 0.025em;
       width: 100%;
       max-width: 400px;
@@ -301,7 +304,7 @@ section {
       section.section-contacts .contact-form .emailSubmit {
         color: white;
         background-color: #638ea3;
-        font-size: 20px;
-        line-height: 32px;
+        font-size: 10px;
+        line-height: 16px;
         letter-spacing: 0.025em;
         padding: 0 6px; }
