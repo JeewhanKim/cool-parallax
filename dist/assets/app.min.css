@@ -220,6 +220,9 @@ main {
   @media (min-width: 1640px) {
     main {
       max-width: 1200px; } }
+  @media (max-width: 767px) {
+    main {
+      padding: 0 10px; } }
 
 a, a:hover, a:visited {
   color: #638ea3; }
@@ -237,11 +240,17 @@ section {
     section > *.section-left {
       float: left;
       width: 20%; }
+      @media (max-width: 767px) {
+        section > *.section-left {
+          width: 26%; } }
     section > *.section-right {
       float: left;
       width: 80%;
       margin-top: 20px;
       margin-bottom: 40px; }
+      @media (max-width: 767px) {
+        section > *.section-right {
+          width: 74%; } }
     section > * .section-wrap {
       display: block;
       text-align: right;

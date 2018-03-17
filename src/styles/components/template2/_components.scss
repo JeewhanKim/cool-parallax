@@ -13,6 +13,9 @@ main {
   @include desktop-xxlarge() {max-width: 1200px;}
 
   padding: 0 30px;
+  @include mobile() {
+    padding: 0 10px;
+  }
   margin: 0 auto;
 }
 a, a:hover, a:visited {
@@ -33,10 +36,12 @@ section {
     &.section-left {
       float: left;
       width: 20%;
+      @include mobile() {width:26%}
     }
     &.section-right {
       float: left;
       width: 80%;
+      @include mobile() {width:74%}
       margin-top: 20px;
       margin-bottom: 40px;
     }
