@@ -48,16 +48,16 @@ section h2 {
     section h2 {
       font-size: 14px; } }
 
-section p, section.section-services .services-list h4, .section-main .section-right p, .section-main .section-right div {
+section p, section.section-services .services-list h4 {
   font-family: 'Rubik', sans-serif;
   font-size: 10px;
   line-height: 1.6em;
   letter-spacing: 0.025em; }
   @media (min-width: 768px) {
-    section p, section.section-services .services-list h4, .section-main .section-right p, .section-main .section-right div {
+    section p, section.section-services .services-list h4 {
       font-size: 11px; } }
   @media (min-width: 1440px) {
-    section p, section.section-services .services-list h4, .section-main .section-right p, .section-main .section-right div {
+    section p, section.section-services .services-list h4 {
       font-size: 12px; } }
 
 /* Main Nav */
@@ -249,6 +249,90 @@ section {
     width: 26px; }
   section.section-video {
     min-height: 500px; }
+  section.section-main {
+    /* Animation */ }
+
+@keyframes fadein {
+  0% {
+    opacity: 0; }
+  20% {
+    opacity: 1; }
+  80% {
+    opacity: 1; }
+  100% {
+    opacity: 1; } }
+
+@keyframes slideinfromtop {
+  0% {
+    margin-top: -34px;
+    opacity: 0; }
+  20% {
+    margin-top: -34px;
+    opacity: 0; }
+  35% {
+    margin-top: 0px;
+    opacity: 1; }
+  100% {
+    margin-top: 0px; } }
+
+@keyframes slideinfromleft {
+  0% {
+    margin-left: -800px;
+    opacity: 0; }
+  20% {
+    margin-left: -800px;
+    opacity: 0; }
+  35% {
+    margin-left: 0px;
+    opacity: 1; }
+  100% {
+    margin-left: 0px; } }
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    width: 0px; }
+  20% {
+    opacity: 1;
+    width: 0px; }
+  30% {
+    width: 100%; }
+  80% {
+    opacity: 1; } }
+    section.section-main.ani-1 .section-right p {
+      overflow: hidden; }
+      section.section-main.ani-1 .section-right p .first {
+        animation: fadein 8s;
+        animation-iteration-count: 1;
+        background: white;
+        z-index: 98;
+        position: relative; }
+      section.section-main.ani-1 .section-right p .second {
+        animation: slideinfromleft 8s;
+        animation-iteration-count: 1; }
+    section.section-main.ani-2 .section-right p {
+      background: white;
+      position: relative; }
+      section.section-main.ani-2 .section-right p:nth-child(1) {
+        z-index: 99;
+        animation: fadein 5s;
+        animation-iteration-count: 1; }
+      section.section-main.ani-2 .section-right p:nth-child(2) {
+        z-index: 98;
+        animation: slideinfromtop 5s;
+        animation-iteration-count: 1; }
+      section.section-main.ani-2 .section-right p:nth-child(3) {
+        z-index: 97;
+        animation: slideinfromtop 6s;
+        animation-iteration-count: 1; }
+      section.section-main.ani-2 .section-right p:nth-child(4) {
+        z-index: 96;
+        animation: slideinfromtop 6.5s;
+        animation-iteration-count: 1; }
+      section.section-main.ani-2 .section-right p:nth-child(5) {
+        z-index: 96;
+        animation: slideinfromtop 7s;
+        animation-iteration-count: 1; }
   section.section-services {
     padding-top: 6px;
     padding-bottom: 120px; }
@@ -344,48 +428,3 @@ section {
         line-height: 16px;
         letter-spacing: 0.025em;
         padding: 0 6px; }
-
-/* Animation */
-@keyframes showup {
-  0% {
-    opacity: 0; }
-  20% {
-    opacity: 1; }
-  80% {
-    opacity: 1; }
-  100% {
-    opacity: 1; } }
-
-@keyframes slidein {
-  0% {
-    margin-left: -800px; }
-  20% {
-    margin-left: -800px; }
-  35% {
-    margin-left: 0px; }
-  100% {
-    margin-left: 0px; } }
-
-@keyframes reveal {
-  0% {
-    opacity: 0;
-    width: 0px; }
-  20% {
-    opacity: 1;
-    width: 0px; }
-  30% {
-    width: 100%; }
-  80% {
-    opacity: 1; } }
-
-.section-main .section-right p, .section-main .section-right div {
-  display: inline;
-  overflow: hidden; }
-
-.section-main .section-right div {
-  animation: showup 2s;
-  animation-iteration-count: 1; }
-  .section-main .section-right div.anim {
-    display: inline-block;
-    animation: reveal 2s;
-    animation-iteration-count: 1; }
