@@ -1,6 +1,4 @@
-// ref: https://codemyui.com/pure-css-text-revealing-animation/
 @import 'nav';
-@import 'mobile';
 body {
   font-family: 'Montserrat', sans-serif;
   // font-family: 'Rubik', sans-serif;
@@ -99,3 +97,5 @@ section {
     @import 'sectionContacts';
   }
 }
+
+@import 'mobile';

@@ -1,34 +1,4 @@
 &-main {
-
-  /* Animation */
-  @keyframes fadein {
-    0% {opacity:0;}
-    20% {opacity:1;}
-    80% {opacity:1;}
-    100% {opacity:1;}
-  }
-  @keyframes slideinfromtop {
-    0% { margin-top:-34px; opacity:0;}
-    20% { margin-top:-34px; opacity:0;}
-    35% { margin-top:0px;opacity:1; }
-    100% { margin-top:0px; }
-  }
-  
-
-  @keyframes slideinfromleft {
-    0% { margin-left:-800px; opacity:0;}
-    20% { margin-left:-800px; opacity:0;}
-    35% { margin-left:0px; opacity:1;}
-    100% { margin-left:0px; }
-  }
-
-  @keyframes reveal {
-    0% {opacity:0;width:0px;}
-    20% {opacity:1;width:0px;}
-    30% {width:100%;}
-    80% {opacity:1;}
-  }
-
   &.ani-1 {
     .section-right {
       p {
@@ -76,29 +46,6 @@
           z-index: 96; 
           animation: slideinfromtop 7s;
           animation-iteration-count: 1;
-        }
-      }
-    }
-  }
-  .section-right {
-    p, div {
-      // display:inline;
-      // overflow:hidden;
-      // white-space:nowrap;
-      // @extend %fontStyleRubik;
-
-    }
-    div {
-      // animation: fadein 2s;
-      // animation-iteration-count: 1;
-      &.anim {
-        // width:0px;
-        // display: inline-block;
-        // animation: reveal 2s;
-        // animation-iteration-count: 1;
-        p {
-          // margin-left:-355px;
-          // animation: slidein 7s 1;
         }
       }
     }
