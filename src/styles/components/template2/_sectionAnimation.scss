@@ -1,0 +1,17 @@
+&-ani {
+  * {
+    background: white;
+    position: relative;
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        z-index: #{100 - $i};
+        @if $i == 1 {
+          animation: fadein 5s;
+        } @else {
+          animation: slideinfromtop #{5 + $i*0.5}s;
+        }
+        animation-iteration-count: 1;  
+      }
+    }
+  }
+}

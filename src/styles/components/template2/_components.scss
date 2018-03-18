@@ -102,6 +102,9 @@ section {
     @import 'sectionClients';
     @import 'sectionContacts';
   }
+  .section {
+    @import 'sectionAnimation';
+  }
 }
 
 @import 'mobile';

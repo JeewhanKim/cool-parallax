@@ -464,6 +464,49 @@ section {
         line-height: 16px;
         letter-spacing: 0.025em;
         padding: 0 6px; }
+  section .section-ani * {
+    background: white;
+    position: relative; }
+    section .section-ani *:nth-child(1) {
+      z-index: 99;
+      animation: fadein 5s;
+      animation-iteration-count: 1; }
+    section .section-ani *:nth-child(2) {
+      z-index: 98;
+      animation: slideinfromtop 6s;
+      animation-iteration-count: 1; }
+    section .section-ani *:nth-child(3) {
+      z-index: 97;
+      animation: slideinfromtop 6.5s;
+      animation-iteration-count: 1; }
+    section .section-ani *:nth-child(4) {
+      z-index: 96;
+      animation: slideinfromtop 7s;
+      animation-iteration-count: 1; }
+    section .section-ani *:nth-child(5) {
+      z-index: 95;
+      animation: slideinfromtop 7.5s;
+      animation-iteration-count: 1; }
+    section .section-ani *:nth-child(6) {
+      z-index: 94;
+      animation: slideinfromtop 8s;
+      animation-iteration-count: 1; }
+    section .section-ani *:nth-child(7) {
+      z-index: 93;
+      animation: slideinfromtop 8.5s;
+      animation-iteration-count: 1; }
+    section .section-ani *:nth-child(8) {
+      z-index: 92;
+      animation: slideinfromtop 9s;
+      animation-iteration-count: 1; }
+    section .section-ani *:nth-child(9) {
+      z-index: 91;
+      animation: slideinfromtop 9.5s;
+      animation-iteration-count: 1; }
+    section .section-ani *:nth-child(10) {
+      z-index: 90;
+      animation: slideinfromtop 10s;
+      animation-iteration-count: 1; }
 
 @media (max-width: 767px) {
   #sticky-menu ul {
