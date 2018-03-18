@@ -4,11 +4,18 @@ body {
   // font-family: 'Rubik', sans-serif;
 }
 main {
+  -webkit-animation: fadeinlinear 1500ms ease-in;
+  animation: fadeinlinear 1500ms ease-in;
+  // display: none;
+
   overflow-x: hidden;
   // background-color: white;
   color: $themeColor2Main;
   max-width: 620px;
-  @include desktop-large() {max-width: 740px;}
+  @include desktop-large() {
+    width: 620/12.80 + %;
+    max-width: 740px;
+  }
   @include desktop-xlarge() {max-width: 800px;}
   @include desktop-xxlarge() {max-width: 900px;}
 
