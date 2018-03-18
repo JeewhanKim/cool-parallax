@@ -3,15 +3,17 @@
     .section-right {
       p {
         overflow: hidden;
+        // animation: breakword 12s;
+        // animation-iteration-count: 1;
         .first {
-          animation: fadein 8s;
+          animation: fadein 4s;
           animation-iteration-count: 1;
           background: white;
           z-index: 98;
           position: relative;
         }
         .second {
-          animation: slideinfromleft 8s;
+          animation: slideinfromleft 12s;
           animation-iteration-count: 1;
         }
       }
@@ -22,30 +24,16 @@
       p {
         background: white;
         position: relative;
-        &:nth-child(1) {
-          z-index: 99; 
-          animation: fadein 5s;
-          animation-iteration-count: 1;
-        }
-        &:nth-child(2) {
-          z-index: 98; 
-          animation: slideinfromtop 5s;
-          animation-iteration-count: 1;
-        }
-        &:nth-child(3) {
-          z-index: 97; 
-          animation: slideinfromtop 6s;
-          animation-iteration-count: 1;
-        }
-        &:nth-child(4) {
-          z-index: 96; 
-          animation: slideinfromtop 6.5s;
-          animation-iteration-count: 1;
-        }
-        &:nth-child(5) {
-          z-index: 96; 
-          animation: slideinfromtop 7s;
-          animation-iteration-count: 1;
+        @for $i from 1 through 10 {
+          &:nth-child(#{$i}) {
+            z-index: #{100 - $i};
+            @if $i == 1 {
+              animation: fadein 5s;
+            } @else {
+              animation: slideinfromtop #{5 + $i*0.5}s;
+            }
+            animation-iteration-count: 1;  
+          }
         }
       }
     }

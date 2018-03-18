@@ -5,7 +5,7 @@
 
 @keyframes fadein {
   0% {opacity:0;}
-  20% {opacity:1;}
+  20% {opacity:0;}
   80% {opacity:1;}
   100% {opacity:1;}
 }
@@ -17,15 +17,14 @@
 }
 
 @keyframes slideinfromleft {
-  0% { margin-left:-800px; opacity:0;}
-  20% { margin-left:-800px; opacity:0;}
-  35% { margin-left:0px; opacity:1;}
+  0% { margin-left:-800px; opacity:0; word-break: break-all;}
+  20% { margin-left:-800px; opacity:0; word-break: break-all;}
+  35% { margin-left:0px; opacity:1; word-break: initial;}
   100% { margin-left:0px; }
 }
 
-// @keyframes reveal {
-//   0% {opacity:0;width:0px;}
-//   20% {opacity:1;width:0px;}
-//   30% {width:100%;}
-//   80% {opacity:1;}
-// }
+@keyframes breakword {
+  0% { word-break: break-all; }
+  35% { word-break: break-all; }
+  40% { word-break: initial; }
+}

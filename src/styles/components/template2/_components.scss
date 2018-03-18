@@ -1,15 +1,15 @@
 @import 'nav';
 body {
   font-family: 'Montserrat', sans-serif;
-  // font-family: 'Rubik', sans-serif;
+}
+a, a:hover, a:visited {
+  color: $themeColor2Main;
 }
 main {
   -webkit-animation: fadeinlinear 1500ms ease-in;
   animation: fadeinlinear 1500ms ease-in;
-  // display: none;
-
+  
   overflow-x: hidden;
-  // background-color: white;
   color: $themeColor2Main;
   max-width: 620px;
   @include desktop-large() {
@@ -20,17 +20,14 @@ main {
   @include desktop-xxlarge() {max-width: 900px;}
 
   padding: 0 30px;
+  margin: 0 auto;
   @include mobile() {
     padding: 0 10px;
   }
-  margin: 0 auto;
 }
-a, a:hover, a:visited {
-  color: $themeColor2Main;
-}
+
 section {
   position: relative;
-  // max-width: 1440px;
   margin: 0 auto;
   &:after {
     content: "";
@@ -70,7 +67,6 @@ section {
     @include transition(.5s, cubic-bezier(.77,0,.175,1), 0s);
     margin-top: 10px;
     opacity: 0;
-    // color: $themeColor2;
     &.animate {
       margin-top: 0;
       opacity: 1;
@@ -92,10 +88,8 @@ section {
       @include transition(.5s, cubic-bezier(.77,0,.175,1), 0s);
     }
     &.animate {
-      // width: 0;
       &:after {
         width: 26px;
-        // transform: translateX(-50%);
       }
     }
   }
