@@ -8,9 +8,9 @@ main {
   // background-color: white;
   color: $themeColor2Main;
   max-width: 620px;
-  @include desktop-large() {max-width: 900px;}
-  @include desktop-xlarge() {max-width: 1000px;}
-  @include desktop-xxlarge() {max-width: 1200px;}
+  @include desktop-large() {max-width: 740px;}
+  @include desktop-xlarge() {max-width: 800px;}
+  @include desktop-xxlarge() {max-width: 900px;}
 
   padding: 0 30px;
   @include mobile() {

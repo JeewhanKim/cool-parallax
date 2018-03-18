@@ -19,11 +19,13 @@
     padding-bottom: 0;
     .vl-name {
       font-size: 12px;
+      font-weight: 500;
     }
     div {
       &.vl-name, 
       &.vl-email, 
-      &.vl-phone {
+      &.vl-phone,
+      &.vl-skype {
         display: inline;
       }
     }

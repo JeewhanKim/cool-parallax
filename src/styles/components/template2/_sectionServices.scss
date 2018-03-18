@@ -4,6 +4,9 @@
   .services-list {
     position: relative;
     width: 100%;
+    p {
+      // line-height: 2em;
+    }
     > div {
       float: left;
       width: 60%;
@@ -13,7 +16,7 @@
     }
     h4 {
       @extend %fontStyleRubik;
-      // font-weight: 800;
+      font-weight: 500;
       margin-bottom: 0.5rem;
       // color: $themeColor2;
     }

@@ -39,6 +39,7 @@
 %fontStyleMontserrat {
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
+  font-weight:300;
   @include desktop() {font-size: 13px;}
   @include desktop-xlarge() {font-size: 14px;}
   letter-spacing: 0.0475px;
@@ -47,6 +48,7 @@
 %fontStyleRubik {
   font-family: 'Rubik', sans-serif;
   font-size: 10px;
+  font-weight:300;
   @include desktop() {font-size: 11px;}
   @include desktop-xlarge() {font-size: 12px;}
   line-height: 1.6em;
