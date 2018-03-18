@@ -55,6 +55,26 @@ const init = () => {
   });
 }
 
+const hashDetect = () => {
+  const hash = window.location.hash;
+  if(hash.length === 0) return;
+
+  $('.section-video, .section-main, .section-about, .section-services').hide()
+
+  if(hash === '#principals') {
+    currentChapter = 1
+    $('.section-principals').fadeIn()
+  }
+  if(hash === '#clients') {
+    currentChapter = 2
+    $('.section-clients').fadeIn()
+  }
+  if(hash === '#contacts') {
+    currentChapter = 3
+    $('.section-contacts').fadeIn()
+  }
+}
+
 const scrollDetect = () => {
   const st = $(window).scrollTop()
   const windowHeight = window.innerHeight 
@@ -123,6 +143,7 @@ const navClickEvents = () => {
         window.location.hash = '#contacts';
       }
     } else {
+      window.location.hash = '';
       if(currentChapter != 0) {
         $('.section-principals, .section-clients, .section-contacts').fadeOut()
 
@@ -161,5 +182,6 @@ chapterInitial()
 navClickEvents()
 genContents()
 init()
+hashDetect()
 scrollDetect()
 win.scroll( _ =>  { scrollDetect() });
