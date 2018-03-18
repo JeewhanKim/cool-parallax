@@ -1,6 +1,6 @@
 &-services {
   padding-top: 6px;
-  padding-bottom: 120px;
+  padding-bottom: 620px;
   .services-list {
     position: relative;
     width: 100%;
@@ -11,7 +11,8 @@
       float: left;
       width: 60%;
       &:first-child {
-        width: 40%;
+        width: 38%;
+        padding-right: 2%;
       }
     }
     h4 {

@@ -1,24 +1,29 @@
 &-clients {
   display: none;
   width: 100%;
-  padding-top: 230px;
+  padding-top: 100px;
   padding-bottom: 230px;
   h2 {
     color: $themeColor2;
   }
-  .line {
-    padding-top: 30px;
-    padding-bottom: 22px;
-  }
+  
   p {
     padding: 0;
     margin: 0;
   }
+  .section-left {
+    .line {
+      opacity: 0;
+    }
+  }
   .client-list {
-    // font-size: 15px;
     font-size: 10px;
     line-height: 30px;
     letter-spacing: 0.025em;
+    .line {
+      padding-top: 30px;
+      padding-bottom: 22px;
+    }
     &-left {
       float: left;
       width: 67%;

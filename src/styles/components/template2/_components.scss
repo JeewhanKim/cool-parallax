@@ -45,9 +45,14 @@ section {
     &.section-right {
       float: left;
       width: 80%;
-      @include mobile() {width:74%}
       margin-top: 20px;
       margin-bottom: 40px;
+      padding-left: 50px;
+      box-sizing: border-box;
+      @include mobile() {
+        padding-left: 0;
+        width:74%;
+      }
     }
     .section-wrap {
       display: block;
@@ -59,7 +64,7 @@ section {
     @extend %fontStyleRubik;
     padding: 0;
     width: 100%;
-    margin: 0 0 14px 0;
+    margin: 0 0 16px 0;
   }
   h2 {
     @extend %fontStyleMontserrat;

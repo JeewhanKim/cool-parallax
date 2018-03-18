@@ -1,13 +1,15 @@
 &-contacts {
   display: none;
   width: 100%;
-  padding-top: 230px;
+  padding-top: 100px;
   padding-bottom: 230px;
   h2 {
     color: $themeColor2;
   }
-  .section-right {
-    margin-top: 0;
+  .section-left {
+    .line {
+      opacity: 0;
+    }
   }
   .contact-form {
     font-size: 10px;

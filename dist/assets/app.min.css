@@ -40,14 +40,11 @@ section h2 {
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
   font-weight: 400;
-  letter-spacing: 0.0475px;
+  letter-spacing: 0.095em;
   line-height: 1em; }
-  @media (min-width: 768px) {
-    section h2 {
-      font-size: 13px; } }
   @media (min-width: 1440px) {
     section h2 {
-      font-size: 14px; } }
+      font-size: 13px; } }
 
 section p, section.section-services .services-list h4 {
   font-family: 'Rubik', sans-serif;
@@ -55,12 +52,9 @@ section p, section.section-services .services-list h4 {
   font-weight: 300;
   line-height: 1.6em;
   letter-spacing: 0.025em; }
-  @media (min-width: 768px) {
-    section p, section.section-services .services-list h4 {
-      font-size: 11px; } }
   @media (min-width: 1440px) {
     section p, section.section-services .services-list h4 {
-      font-size: 12px; } }
+      font-size: 11px; } }
 
 @keyframes fadeinlinear {
   from {
@@ -271,9 +265,12 @@ section {
       float: left;
       width: 80%;
       margin-top: 20px;
-      margin-bottom: 40px; }
+      margin-bottom: 40px;
+      padding-left: 50px;
+      box-sizing: border-box; }
       @media (max-width: 767px) {
         section > *.section-right {
+          padding-left: 0;
           width: 74%; } }
     section > * .section-wrap {
       display: block;
@@ -282,7 +279,7 @@ section {
   section p {
     padding: 0;
     width: 100%;
-    margin: 0 0 14px 0; }
+    margin: 0 0 16px 0; }
   section h2 {
     color: #efad8f;
     -webkit-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
@@ -369,7 +366,7 @@ section {
       animation-iteration-count: 1; }
   section.section-services {
     padding-top: 6px;
-    padding-bottom: 120px; }
+    padding-bottom: 620px; }
     section.section-services .services-list {
       position: relative;
       width: 100%; }
@@ -377,20 +374,23 @@ section {
         float: left;
         width: 60%; }
         section.section-services .services-list > div:first-child {
-          width: 40%; }
+          width: 38%;
+          padding-right: 2%; }
       section.section-services .services-list h4 {
         font-weight: 400;
         margin-bottom: 0.5rem; }
   section.section-principals {
     display: none;
     width: 100%;
-    padding-top: 230px;
-    padding-bottom: 230px; }
+    padding-top: 100px;
+    padding-bottom: 100px; }
     section.section-principals h2 {
       color: #efad8f; }
     section.section-principals p {
       padding: 0;
       margin: 0 0 14px 0; }
+    section.section-principals .section-left .line {
+      opacity: 0; }
     section.section-principals .principals-sub {
       padding-top: 33px; }
       section.section-principals .principals-sub:first-child {
@@ -400,23 +400,27 @@ section {
         line-height: 16px;
         letter-spacing: 0.025em;
         padding-bottom: 18px; }
+    section.section-principals .section-right .principals-sub:first-child {
+      padding-top: 0; }
   section.section-clients {
     display: none;
     width: 100%;
-    padding-top: 230px;
+    padding-top: 100px;
     padding-bottom: 230px; }
     section.section-clients h2 {
       color: #efad8f; }
-    section.section-clients .line {
-      padding-top: 30px;
-      padding-bottom: 22px; }
     section.section-clients p {
       padding: 0;
       margin: 0; }
+    section.section-clients .section-left .line {
+      opacity: 0; }
     section.section-clients .client-list {
       font-size: 10px;
       line-height: 30px;
       letter-spacing: 0.025em; }
+      section.section-clients .client-list .line {
+        padding-top: 30px;
+        padding-bottom: 22px; }
       section.section-clients .client-list-left {
         float: left;
         width: 67%; }
@@ -426,12 +430,12 @@ section {
   section.section-contacts {
     display: none;
     width: 100%;
-    padding-top: 230px;
+    padding-top: 100px;
     padding-bottom: 230px; }
     section.section-contacts h2 {
       color: #efad8f; }
-    section.section-contacts .section-right {
-      margin-top: 0; }
+    section.section-contacts .section-left .line {
+      opacity: 0; }
     section.section-contacts .contact-form {
       font-size: 10px;
       line-height: 16px;

@@ -1,14 +1,19 @@
 &-principals {
   display: none;
   width: 100%;
-  padding-top: 230px;
-  padding-bottom: 230px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   h2 {
     color: $themeColor2;
   }
   p {
     padding: 0;
     margin: 0 0 14px 0;
+  }
+  .section-left {
+    .line {
+      opacity: 0;
+    }
   }
   .principals-sub {
     padding-top: 33px;
@@ -21,6 +26,13 @@
       line-height: 16px;
       letter-spacing: 0.025em;
       padding-bottom: 18px;
+    }
+  }
+  .section-right {
+    .principals-sub {
+      &:first-child {
+        padding-top: 0;
+      }
     }
   }
 }

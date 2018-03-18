@@ -108,28 +108,36 @@ const navClickEvents = () => {
         currentChapter = 1
         $('.section-clients, .section-contacts').fadeOut()
         $('.section-principals').delay(400).fadeIn()
+        window.location.hash = '#principals';
       }
       if(targetLinkTo === '#clients') {
         currentChapter = 2
         $('.section-principals, .section-contacts').fadeOut()
         $('.section-clients').delay(400).fadeIn()
+        window.location.hash = '#clients';
       }
       if(targetLinkTo === '#contacts') {
         currentChapter = 3
         $('.section-principals, .section-clients').fadeOut()
         $('.section-contacts').delay(400).fadeIn()
+        window.location.hash = '#contacts';
       }
     } else {
       if(currentChapter != 0) {
         $('.section-principals, .section-clients, .section-contacts').fadeOut()
+
+        $('.section-main .section-right').removeClass('section-ani');
+        $('.section-about .section-right').removeClass('section-ani');
+        $('.section-services .section-right').removeClass('section-ani');
+
         $('.section-video, .section-main, .section-about, .section-services').delay(400).fadeIn(400, () => {
-          $('html, body').animate({
-            scrollTop: $(targetLinkTo).offset().top
-          }, 600);
+          $('html, body').delay(400).animate({
+            scrollTop: $(targetLinkTo).offset().top - 20
+          }, 300);
         })
       } else {
         $('html, body').animate({
-          scrollTop: $(targetLinkTo).offset().top
+          scrollTop: $(targetLinkTo).offset().top - 20
         }, 600);
       }
       currentChapter = 0
