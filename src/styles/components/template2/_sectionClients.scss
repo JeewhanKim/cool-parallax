@@ -13,7 +13,12 @@
   }
   .section-left {
     .line {
-      opacity: 0;
+      // opacity: 0;
+    }
+  }
+  .section-right {
+    p {
+      padding-bottom: 48px;
     }
   }
   .client-list {

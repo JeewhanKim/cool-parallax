@@ -389,8 +389,6 @@ section {
     section.section-principals p {
       padding: 0;
       margin: 0 0 14px 0; }
-    section.section-principals .section-left .line {
-      opacity: 0; }
     section.section-principals .principals-sub {
       padding-top: 33px; }
       section.section-principals .principals-sub:first-child {
@@ -412,8 +410,8 @@ section {
     section.section-clients p {
       padding: 0;
       margin: 0; }
-    section.section-clients .section-left .line {
-      opacity: 0; }
+    section.section-clients .section-right p {
+      padding-bottom: 48px; }
     section.section-clients .client-list {
       font-size: 10px;
       line-height: 30px;
@@ -434,8 +432,6 @@ section {
     padding-bottom: 230px; }
     section.section-contacts h2 {
       color: #efad8f; }
-    section.section-contacts .section-left .line {
-      opacity: 0; }
     section.section-contacts .contact-form {
       font-size: 10px;
       line-height: 16px;
