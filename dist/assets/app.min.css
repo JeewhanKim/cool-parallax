@@ -301,7 +301,7 @@ section {
   section .line.animate:after {
     width: 26px; }
   section.section-video {
-    min-height: 500px; }
+    min-height: 300px; }
   section.section-main.ani-1 .section-right p {
     overflow: hidden; }
     section.section-main.ani-1 .section-right p .first {
