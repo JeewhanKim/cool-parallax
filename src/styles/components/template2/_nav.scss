@@ -21,6 +21,11 @@
   #logo {
     cursor: pointer;
     @include transition(.5s, cubic-bezier(.77,0,.175,1), 0s);
+    img {
+      width: 50%;
+      margin-right: -20px;
+      float: right;
+    }
   }
   &.active {
     #logo {
@@ -57,7 +62,7 @@
     li {
       background: rgba(255, 255, 255, 0.75);
       margin: 0;
-      padding: 1px 5px;
+      padding: 1px 15px;
       text-align: right;
       display: inline-block;
       width: 100%;

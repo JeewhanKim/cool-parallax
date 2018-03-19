@@ -135,6 +135,10 @@ section p, section.section-services .services-list h4 {
     -moz-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     -o-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s; }
+    #sticky-menu #logo img {
+      width: 50%;
+      margin-right: -20px;
+      float: right; }
   #sticky-menu.active #logo {
     opacity: 1;
     display: block; }
@@ -162,7 +166,7 @@ section p, section.section-services .services-list h4 {
     #sticky-menu ul li {
       background: rgba(255, 255, 255, 0.75);
       margin: 0;
-      padding: 1px 5px;
+      padding: 1px 15px;
       text-align: right;
       display: inline-block;
       width: 100%;
