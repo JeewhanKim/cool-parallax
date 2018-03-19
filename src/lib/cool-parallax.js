@@ -168,6 +168,8 @@ const navClickEvents = () => {
       }
       currentChapter = 0
     }
+
+    $('#sticky-menu').addClass('active')
     // console.log($(e.currentTarget).attr('href'));
   })
   $('#logo').click(() => {
