@@ -53,6 +53,8 @@ const init = () => {
       animate = false
     });
   });
+
+  document.getElementById("video").play();
 }
 
 const hashDetect = () => {
@@ -127,19 +129,19 @@ const navClickEvents = () => {
       if(targetLinkTo === '#principals') {
         currentChapter = 1
         $('.section-clients, .section-contacts').fadeOut()
-        $('.section-principals').delay(400).fadeIn()
+        $('.section-principals').delay(0).fadeIn()
         window.location.hash = '#principals';
       }
       if(targetLinkTo === '#clients') {
         currentChapter = 2
         $('.section-principals, .section-contacts').fadeOut()
-        $('.section-clients').delay(400).fadeIn()
+        $('.section-clients').delay(0).fadeIn()
         window.location.hash = '#clients';
       }
       if(targetLinkTo === '#contacts') {
         currentChapter = 3
         $('.section-principals, .section-clients').fadeOut()
-        $('.section-contacts').delay(400).fadeIn()
+        $('.section-contacts').delay(0).fadeIn()
         window.location.hash = '#contacts';
       }
     } else {

@@ -6,9 +6,9 @@
       &:nth-child(#{$i}) {
         z-index: #{100 - $i};
         @if $i == 1 {
-          animation: fadein 5s;
+          animation: fadein 1s;
         } @else {
-          animation: slideinfromtop #{5 + $i*0.5}s;
+          animation: slideinfromtop #{2 + $i*0.5}s;
         }
         animation-iteration-count: 1;  
       }
