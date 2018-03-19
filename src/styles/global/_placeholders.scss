@@ -40,8 +40,10 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
   font-weight:400;
-  // @include desktop() {font-size: 13px;}
-  @include desktop-xlarge() {font-size: 13px;}
+  @include mobile() {font-size: 13px;}
+  
+  @include desktop() {font-size: 13px;}
+  @include desktop-xlarge() {font-size: 14px;}
   // letter-spacing: 0.0475px;
   letter-spacing: 0.095em;
   line-height: 1em;
@@ -50,8 +52,11 @@
   font-family: 'Rubik', sans-serif;
   font-size: 10px;
   font-weight:300;
-  // @include desktop() {font-size: 11px;}
-  @include desktop-xlarge() {font-size: 11px;}
+  @include mobile() {font-size: 12px;}
+
+  @include desktop() {font-size: 11px;}
+  @include desktop-xlarge() {font-size: 12px;}
+  @include desktop-xxlarge() {font-size: 13px;}
   line-height: 1.6em;
   letter-spacing: 0.025em;
 

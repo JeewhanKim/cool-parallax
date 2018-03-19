@@ -66,14 +66,17 @@ const hashDetect = () => {
   if(hash === '#principals') {
     currentChapter = 1
     $('.section-principals').fadeIn()
+    $('#nav-principals').addClass('active')
   }
   if(hash === '#clients') {
     currentChapter = 2
     $('.section-clients').fadeIn()
+    $('#nav-clients').addClass('active')
   }
   if(hash === '#contacts') {
     currentChapter = 3
     $('.section-contacts').fadeIn()
+    $('#nav-contacts').addClass('active')
   }
 }
 
