@@ -152,7 +152,7 @@ section p, section.section-services .services-list h4 {
     -ms-transform: none;
     transform: none;
     position: absolute;
-    padding: 20px 0;
+    padding: 0 0 20px 0;
     margin: 0;
     list-style: none;
     width: 140px;
@@ -261,13 +261,13 @@ section {
     z-index: 200; }
     section > *.section-left {
       float: left;
-      width: 20%; }
+      width: 22%; }
       @media (max-width: 767px) {
         section > *.section-left {
           width: 26%; } }
     section > *.section-right {
       float: left;
-      width: 80%;
+      width: 78%;
       margin-top: 20px;
       margin-bottom: 40px;
       padding-left: 50px;
