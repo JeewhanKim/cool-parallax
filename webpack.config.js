@@ -1,5 +1,7 @@
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const autoprefixer = require('autoprefixer')
+const webpack = require('webpack')
 
 module.exports = {
   entry: {
@@ -61,5 +63,12 @@ module.exports = {
       filename: '[name].min.css',
       allChunks: true,
     }),
+    new webpack.LoaderOptionsPlugin({
+        minimize: true,
+        debug: true,
+        options: {
+            postcss: [autoprefixer]       
+        }
+    })
   ]
 };
