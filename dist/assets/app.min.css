@@ -313,7 +313,7 @@ section {
   section .line.animate:after {
     width: 26px; }
   section.section-video {
-    min-height: 300px; }
+    min-height: 200px; }
   section.section-main.ani-1 .section-right p {
     overflow: hidden; }
     section.section-main.ani-1 .section-right p .first {
@@ -515,4 +515,6 @@ section {
 @media (max-width: 767px) {
   #sticky-menu ul {
     width: 20%;
-    right: 0; } }
+    right: 0; }
+  #sticky-menu #logo img {
+    width: 100%; } }
