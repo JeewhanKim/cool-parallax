@@ -191,6 +191,7 @@ section p, section.section-services .services-list h4, section.section-principal
     margin: 0;
     list-style: none;
     width: 140px;
+    box-sizing: border-box;
     right: 0;
     top: 0;
     transform: translateX(-50%);
@@ -570,7 +571,6 @@ section {
 
 @media (max-width: 767px) {
   #sticky-menu ul {
-    width: 20%;
-    right: 0; }
-  #sticky-menu #logo img {
-    width: 100%; } }
+    transform: translateX(-30%); }
+    #sticky-menu ul #logo {
+      background: none; } }

@@ -145,36 +145,41 @@ const navClickEvents = () => {
         currentChapter = 2
         $('.section-principals, .section-contacts').fadeOut()
         $('.section-clients').delay(0).fadeIn()
-        window.location.hash = '#clients';
+        window.location.hash = '#clients'
       }
       if(targetLinkTo === '#contacts') {
         currentChapter = 3
         $('.section-principals, .section-clients').fadeOut()
         $('.section-contacts').delay(0).fadeIn()
-        window.location.hash = '#contacts';
+        window.location.hash = '#contacts'
       }
+      // scrollDetect()
     } else {
       window.location.hash = '';
       if(currentChapter != 0) {
         $('.section-principals, .section-clients, .section-contacts').fadeOut()
+        $('.section-main .section-right').removeClass('section-ani')
+        $('.section-about .section-right').removeClass('section-ani')
+        $('.section-services .section-right').removeClass('section-ani')
 
-        $('.section-main .section-right').removeClass('section-ani');
-        $('.section-about .section-right').removeClass('section-ani');
-        $('.section-services .section-right').removeClass('section-ani');
-
+        $('.video-static').hide()
+        $('.video-slices, .video-placeholder').show().css('opacity', 0)
+        
         $('.section-video, .section-main, .section-about, .section-services').delay(400).fadeIn(400, () => {
-          if(targetLinkTo === 'body') return
-          $('html, body').delay(400).animate({
-            scrollTop: $(targetLinkTo).offset().top - 20
-          }, 300)
+          currentChapter = 0
+          initAnimation()
+          
+          if(targetLinkTo !== 'body') {
+            $('html, body').delay(400).animate({
+              scrollTop: $(targetLinkTo).offset().top - 20
+            }, 300)
+          }
         })
       } else {
         $('html, body').animate({
           scrollTop: $(targetLinkTo).offset().top - 20
         }, 600)
       }
-      currentChapter = 0
-      initAnimation()
     }
 
     $('#sticky-menu').addClass('active')
@@ -194,14 +199,17 @@ const navClickEvents = () => {
 }
 
 const logoAnimation = () => {
-  if(currentChapter !== 0) return
+  // if(currentChapter !== 0) return
+  console.log('logoAnimation')
   const $videoContainer = $('.video-slices')
+  $videoContainer.css('opacity', 1)
   const videoHeight = $videoContainer.find('img:eq(0)').outerHeight()
   $videoContainer.find('img').css('height', videoHeight)
   const $videoSlices = $videoContainer.find('img')
 
   let offsetY = 0
   $.each($videoSlices, (index, val) => {
+    // console.log('tttt')
     setTimeout(function(){ 
       $videoContainer.css('top', `-${offsetY}px`)
       offsetY += $(val).outerHeight()
@@ -214,13 +222,9 @@ const navLogoAnimation = () => {
   const navHeight = $navContainer.find('img:eq(0)').outerHeight()
   $navContainer.find('img').css('height', navHeight)
   const $navSlices = $navContainer.find('img')
-
-  console.log(`${$navSlices.length}`)
-
   let offsetY = 0
   $.each($navSlices, (index, val) => {
     setTimeout(function(){ 
-      console.log(index + " " + offsetY)
       $navContainer.css('top', `-${offsetY}px`)
       offsetY += $(val).outerHeight()
     }, 33*index)
@@ -238,11 +242,8 @@ scrollDetect()
 win.scroll( _ =>  { scrollDetect() });
 win.resize( _ =>  { 
   scrollDetect() 
-  $('.video-slices, .video-placeholder').hide()
-  $('.video-static').show()
-
-  $('.logo-slices, .logo-placeholder').hide()
-  $('.logo-static').show()
+  $('.video-slices, .video-placeholder, .logo-slices, .logo-placeholder').hide()
+  $('.video-static, .logo-static').show()
 });
 win.load( _ => { 
   initAnimation()

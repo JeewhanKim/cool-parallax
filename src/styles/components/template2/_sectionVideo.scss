@@ -3,14 +3,6 @@
   width: 100%;
   max-width: 740px;
   opacity: -1;
-  // height: 
-  // width: 740px;
-  // height: 416px;
-
-  // background-image: url("animation/vendeloo_coral_blue0000.jpg");
-  // background-position: left top;
-  // background-repeat: no-repeat;
-
   video {
     @include mobile() {
       display: none;
