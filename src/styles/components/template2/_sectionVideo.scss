@@ -1,3 +1,15 @@
 &-video {
   min-height: 200px;
+  video {
+    @include mobile() {
+      display: none;
+    }
+  }
+  img {
+    width: 100%;
+    display: none;
+    @include mobile() {
+      display: block;
+    }
+  }
 }

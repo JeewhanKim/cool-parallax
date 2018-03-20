@@ -54,7 +54,7 @@ const init = () => {
     });
   });
 
-  document.getElementById("video").play();
+  // document.getElementById("video").play();
 }
 
 const hashDetect = () => {

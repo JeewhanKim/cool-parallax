@@ -35,6 +35,10 @@
     ul {
       li {
         opacity: 0;
+        pointer-events: none;
+        &#logo {
+          pointer-events: inherit;
+        }
       }
     }
   }
