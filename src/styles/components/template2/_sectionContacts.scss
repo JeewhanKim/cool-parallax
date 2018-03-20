@@ -6,29 +6,29 @@
   h2 {
     color: $themeColor2;
   }
-  .section-left {
-    .line {
-      // opacity: 0;
-    }
-  }
   .contact-form {
-    font-size: 10px;
-    line-height: 16px;
-    letter-spacing: 0.025em;
+    // font-size: 10px;
+    // line-height: 16px;
+    // letter-spacing: 0.025em;
     width: 100%;
     max-width: 400px;
     padding-top: 14px;
     padding-bottom: 0;
-    .vl-name {
-      font-size: 12px;
-      font-weight: 400;
-    }
+
+    @extend %fontStyleRubik;
+
     div {
       &.vl-name, 
       &.vl-email, 
       &.vl-phone,
       &.vl-skype {
         display: inline;
+        @extend %fontStyleRubik;
+      }
+      .vl-name {
+        @extend %fontStyleRubik;
+        font-weight: 400;
+        margin-bottom: 0.5rem;
       }
     }
     input,

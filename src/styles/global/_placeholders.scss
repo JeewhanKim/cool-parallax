@@ -27,10 +27,7 @@
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
   }
-  &.active:after,
-  &:hover:after,
-  &:focus:after,
-  &:active:after {
+  &.active:after {
     left: 0;
     right: auto;
     width: 100%;

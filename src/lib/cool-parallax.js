@@ -7,9 +7,11 @@ import { setTimeout } from "timers";
 */
 const win = $(window)
 const doc = $(document)
-const nav = $('.nav')
+const nav = $('#sticky-menu')
 const stickyNav = $('#sticky-menu')
 const navButtons = nav.find('li')
+
+let scrolling = false
 
 let elements = []
 let offSets = []
@@ -41,23 +43,24 @@ const init = () => {
     obj.container = $(elm)
     obj.options = $(elm).attr('data-animate') ? JSON.parse($(elm).attr('data-animate')) : {}
     elements.push(obj)
-    // console.log(obj.options)
   })
-  $('.chapter').each((i, elm) => {
-    offSets.push($(elm).offset().top + stickyNav.outerHeight())
-  })
+  // $('.chapter').each((i, elm) => {
+  //   offSets.push($(elm).offset().top + stickyNav.outerHeight())
+  // })
 
-  navButtons.click((e) => {
-    if(animate) return
-    animate = true
-    const target = $(e.currentTarget).data('for')
-    , moveTo = $(target).offset().top - stickyNav.outerHeight()
-    $("html, body").animate({
-      scrollTop: moveTo
-    }, scrollSpeed, () => {
-      animate = false
-    });
-  });
+  // console.log(offSets)
+
+  // navButtons.click((e) => {
+  //   if(animate) return
+  //   animate = true
+  //   const target = $(e.currentTarget).data('for')
+  //   , moveTo = $(target).offset().top - stickyNav.outerHeight()
+  //   $("html, body").animate({
+  //     scrollTop: moveTo
+  //   }, scrollSpeed, () => {
+  //     animate = false
+  //   });
+  // });
 
   // document.getElementById("video").play();
 }
@@ -86,20 +89,50 @@ const hashDetect = () => {
 }
 
 const scrollDetect = () => {
+  /* Chapter indicators */
+  const st = $(window).scrollTop()
+  const offsets1 = $('.section-main').offset().top
+  const offsets2 = $('.section-about').offset().top
+  const offsets3 = $('.section-services').offset().top
+
+  if(currentChapter === 0) {
+    if(st >= 0 && st < offsets2) {
+      $('#menu-00 a').addClass('active')
+    } else {
+      $('#menu-00 a').removeClass('active')
+    }
+
+    if(st >= offsets2 && st < offsets3) {
+      $('#menu-01 a').addClass('active')
+    } else {
+      $('#menu-01 a').removeClass('active')
+    }
+
+    if(st >= offsets3) {
+      $('#menu-02 a').addClass('active')
+    } else {
+      $('#menu-02 a').removeClass('active')
+    }
+
+    // navButtons.each((i, elm) => {
+    //   if(i === 0) {
+    //     (st <= offSets[i+1] - windowHeight/2) ? $(elm).addClass('active') : $(elm).removeClass('active')
+    //   } else if(i+1 < navButtons.length) {
+    //     ((st > offSets[i] - windowHeight/2) && (st <= offSets[i+1] - windowHeight/2)) ? 
+    //       $(elm).addClass('active') : $(elm).removeClass('active')
+    //   } else {
+    //     (st > offSets[i] - windowHeight/2) ? $(elm).addClass('active') : $(elm).removeClass('active')
+    //   }
+    // })
+  }
+
+  if(!scrolling) subheadAnimation()
+}
+
+const subheadAnimation = () => {
+
   const st = $(window).scrollTop()
   const windowHeight = window.innerHeight 
-
-  /* Chapter indicators */
-  navButtons.each((i, elm) => {
-    if(i === 0) {
-      (st <= offSets[i+1] - windowHeight/2) ? $(elm).addClass('active') : $(elm).removeClass('active')
-    } else if(i+1 < navButtons.length) {
-      ((st > offSets[i] - windowHeight/2) && (st <= offSets[i+1] - windowHeight/2)) ? 
-        $(elm).addClass('active') : $(elm).removeClass('active')
-    } else {
-      (st > offSets[i] - windowHeight/2) ? $(elm).addClass('active') : $(elm).removeClass('active')
-    }
-  })
 
   /* cool parallax animation handler */
   elements.forEach((elm) => {
@@ -109,10 +142,13 @@ const scrollDetect = () => {
     }
     if(o.class !== undefined) {
       let revisedSt = o.trigger === "top" ? st : st + windowHeight
-      // console.log('revisedSt')
       if((revisedSt + o.offset) > $(o.target).offset().top) {
         $(elm.container).addClass(o.class)
       } else if(!o.once){
+        $(elm.container).removeClass(o.class)
+      }
+
+      if(st - 50 > $(o.target).offset().top) {
         $(elm.container).removeClass(o.class)
       }
     }
@@ -132,28 +168,34 @@ const navClickEvents = () => {
 
     if(targetLinkTo === '#principals' || targetLinkTo === '#clients' || targetLinkTo === '#contacts') {
       $('.section-video, .section-main, .section-about, .section-services').fadeOut()
+      scrolling = true
       $('html, body').animate({
         scrollTop: 0
-      }, 200);
+      }, 400, function() {
+        scrolling = false
+      });
       if(targetLinkTo === '#principals') {
         currentChapter = 1
         $('.section-clients, .section-contacts').fadeOut()
         $('.section-principals').delay(0).fadeIn()
+        $('.section-principals').find('.cool-parallax').addClass('animate')
         window.location.hash = '#principals';
       }
       if(targetLinkTo === '#clients') {
         currentChapter = 2
         $('.section-principals, .section-contacts').fadeOut()
         $('.section-clients').delay(0).fadeIn()
+        $('.section-clients').find('.cool-parallax').addClass('animate')
         window.location.hash = '#clients'
       }
       if(targetLinkTo === '#contacts') {
         currentChapter = 3
         $('.section-principals, .section-clients').fadeOut()
         $('.section-contacts').delay(0).fadeIn()
+        $('.section-contacts').find('.cool-parallax').addClass('animate')
         window.location.hash = '#contacts'
       }
-      // scrollDetect()
+      // subheadAnimation()
     } else {
       window.location.hash = '';
       if(currentChapter != 0) {
@@ -170,9 +212,12 @@ const navClickEvents = () => {
           initAnimation()
           
           if(targetLinkTo !== 'body') {
+            scrolling = true
             $('html, body').delay(400).animate({
               scrollTop: $(targetLinkTo).offset().top - 20
-            }, 300)
+            }, 300, function(){
+              scrolling = false
+            })
           }
         })
       } else {
@@ -199,18 +244,15 @@ const navClickEvents = () => {
 }
 
 const logoAnimation = () => {
-  // if(currentChapter !== 0) return
-  console.log('logoAnimation')
   const $videoContainer = $('.video-slices')
-  $videoContainer.css('opacity', 1)
   const videoHeight = $videoContainer.find('img:eq(0)').outerHeight()
   $videoContainer.find('img').css('height', videoHeight)
   const $videoSlices = $videoContainer.find('img')
 
   let offsetY = 0
   $.each($videoSlices, (index, val) => {
-    // console.log('tttt')
     setTimeout(function(){ 
+      $videoContainer.css('opacity', 1)
       $videoContainer.css('top', `-${offsetY}px`)
       offsetY += $(val).outerHeight()
     }, 33*index)

@@ -31,7 +31,7 @@ section, p, ul, li {
   transition-duration: 0.3s;
   transition-timing-function: ease-out; }
 
-#sticky-menu ul li a.active:after, #sticky-menu ul li a:hover:after, #sticky-menu ul li a:focus:after, #sticky-menu ul li a:active:after {
+#sticky-menu ul li a.active:after {
   left: 0;
   right: auto;
   width: 100%; }
@@ -52,23 +52,23 @@ section h2 {
     section h2 {
       font-size: 14px; } }
 
-section p, section.section-services .services-list h4, section.section-principals .principals-sub h3 {
+section p, section.section-services .services-list h4, section.section-principals .principals-sub h3, section.section-contacts .contact-form, section.section-contacts .contact-form div.vl-name, section.section-contacts .contact-form div.vl-email, section.section-contacts .contact-form div.vl-phone, section.section-contacts .contact-form div.vl-skype, section.section-contacts .contact-form div .vl-name {
   font-family: 'Rubik', sans-serif;
   font-size: 10px;
   font-weight: 300;
   line-height: 1.6em;
   letter-spacing: 0.025em; }
   @media (max-width: 767px) {
-    section p, section.section-services .services-list h4, section.section-principals .principals-sub h3 {
+    section p, section.section-services .services-list h4, section.section-principals .principals-sub h3, section.section-contacts .contact-form, section.section-contacts .contact-form div.vl-name, section.section-contacts .contact-form div.vl-email, section.section-contacts .contact-form div.vl-phone, section.section-contacts .contact-form div.vl-skype, section.section-contacts .contact-form div .vl-name {
       font-size: 12px; } }
   @media (min-width: 768px) {
-    section p, section.section-services .services-list h4, section.section-principals .principals-sub h3 {
+    section p, section.section-services .services-list h4, section.section-principals .principals-sub h3, section.section-contacts .contact-form, section.section-contacts .contact-form div.vl-name, section.section-contacts .contact-form div.vl-email, section.section-contacts .contact-form div.vl-phone, section.section-contacts .contact-form div.vl-skype, section.section-contacts .contact-form div .vl-name {
       font-size: 12px; } }
   @media (min-width: 1440px) {
-    section p, section.section-services .services-list h4, section.section-principals .principals-sub h3 {
+    section p, section.section-services .services-list h4, section.section-principals .principals-sub h3, section.section-contacts .contact-form, section.section-contacts .contact-form div.vl-name, section.section-contacts .contact-form div.vl-email, section.section-contacts .contact-form div.vl-phone, section.section-contacts .contact-form div.vl-skype, section.section-contacts .contact-form div .vl-name {
       font-size: 13px; } }
   @media (min-width: 1640px) {
-    section p, section.section-services .services-list h4, section.section-principals .principals-sub h3 {
+    section p, section.section-services .services-list h4, section.section-principals .principals-sub h3, section.section-contacts .contact-form, section.section-contacts .contact-form div.vl-name, section.section-contacts .contact-form div.vl-email, section.section-contacts .contact-form div.vl-phone, section.section-contacts .contact-form div.vl-skype, section.section-contacts .contact-form div .vl-name {
       font-size: 14px; } }
 
 @keyframes fadeinlinear {
@@ -168,8 +168,7 @@ section p, section.section-services .services-list h4, section.section-principal
       display: block; }
     #sticky-menu #logo .logo-static {
       width: 50%;
-      min-width: 62px;
-      margin-left: 32px;
+      margin-left: 62%;
       display: none; }
   #sticky-menu.active #logo {
     opacity: 1;
@@ -218,7 +217,7 @@ section p, section.section-services .services-list h4, section.section-principal
         letter-spacing: 0.095em;
         -webkit-transition: .1s;
         transition: .1s; }
-        #sticky-menu ul li a.active, #sticky-menu ul li a:hover {
+        #sticky-menu ul li a.active {
           color: #efad8f; }
 
 /* Main Nav Indicator */
@@ -254,13 +253,13 @@ section p, section.section-services .services-list h4, section.section-principal
       -moz-transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
       -o-transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
       transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s; }
-    .nav li:hover:after, .nav li.active:after {
+    .nav li.active:after {
       background: #efad8f; }
 
 body {
   font-family: 'Montserrat', sans-serif; }
 
-a, a:hover, a:visited {
+a, a:visited {
   color: #638ea3; }
 
 main {
@@ -494,18 +493,15 @@ section {
     section.section-contacts h2 {
       color: #efad8f; }
     section.section-contacts .contact-form {
-      font-size: 10px;
-      line-height: 16px;
-      letter-spacing: 0.025em;
       width: 100%;
       max-width: 400px;
       padding-top: 14px;
       padding-bottom: 0; }
-      section.section-contacts .contact-form .vl-name {
-        font-size: 12px;
-        font-weight: 400; }
       section.section-contacts .contact-form div.vl-name, section.section-contacts .contact-form div.vl-email, section.section-contacts .contact-form div.vl-phone, section.section-contacts .contact-form div.vl-skype {
         display: inline; }
+      section.section-contacts .contact-form div .vl-name {
+        font-weight: 400;
+        margin-bottom: 0.5rem; }
       section.section-contacts .contact-form input,
       section.section-contacts .contact-form textarea {
         color: #638ea3;

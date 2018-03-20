@@ -44,8 +44,8 @@
     }
     .logo-static {
       width: 50%;
-      min-width: 62px;
-      margin-left: 32px;
+      // min-width: 62px;
+      margin-left: 62%;
       display: none;
     }
     
@@ -104,8 +104,7 @@
         font-size: 11px;
         line-height: 18px;
         letter-spacing: 0.095em;
-        &.active,
-        &:hover {
+        &.active {
           // color: green;
           color: $themeColor2;
         }
@@ -149,7 +148,7 @@
       top: 2px;
       @include transition(.5s, 'cubic', 0s);
     }
-    &:hover,
+    // &:hover,
     &.active {
       &:after {
         background: $themeColor2;
