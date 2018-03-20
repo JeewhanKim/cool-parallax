@@ -47,7 +47,10 @@ module.exports = {
   },
   resolve: {
     // resolve file extensions
-    extensions: ['.jsx', '.js']
+    extensions: ['.jsx', '.js'],
+    // alias: {
+    //   'assets': resolve('your/path/to/assets')
+    // }
   },
   devServer: {
     contentBase: path.join(__dirname, "./dist/"),
@@ -63,12 +66,12 @@ module.exports = {
       filename: '[name].min.css',
       allChunks: true,
     }),
-    new webpack.LoaderOptionsPlugin({
-        minimize: true,
-        debug: true,
-        options: {
-            postcss: [autoprefixer]       
-        }
-    })
+    // new webpack.LoaderOptionsPlugin({
+    //     minimize: true,
+    //     debug: true,
+    //     options: {
+    //         postcss: [autoprefixer]       
+    //     }
+    // })
   ]
 };

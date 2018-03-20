@@ -1,5 +1,14 @@
 &-video {
   min-height: 200px;
+  width: 100%;
+  // height: 
+  // width: 740px;
+  // height: 416px;
+
+  // background-image: url("animation/vendeloo_coral_blue0000.jpg");
+  // background-position: left top;
+  // background-repeat: no-repeat;
+
   video {
     @include mobile() {
       display: none;
@@ -11,5 +20,25 @@
     @include mobile() {
       display: block;
     }
+  }
+  overflow: hidden;
+  .video-slices {
+    top: 0;
+    position: absolute;
+    // animation: logoanimation 2s;
+    // animation-iteration-count: 1;
+
+    img {
+      display: block;
+    }
+
+    // background-image: url(test.jpg);
+  }
+  .video-placeholder {
+    display: block;
+    opacity: 0;
+  }
+  .video-static {
+    display: none;
   }
 }
