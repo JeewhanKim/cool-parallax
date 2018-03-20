@@ -104,6 +104,7 @@ const scrollDetect = () => {
     }
     if(o.class !== undefined) {
       let revisedSt = o.trigger === "top" ? st : st + windowHeight
+      // console.log('revisedSt')
       if((revisedSt + o.offset) > $(o.target).offset().top) {
         $(elm.container).addClass(o.class)
       } else if(!o.once){

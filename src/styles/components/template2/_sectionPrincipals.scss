@@ -22,10 +22,9 @@
       padding-top: 48px;
     }
     h3 {
-      font-size: 13px;
-      line-height: 16px;
-      letter-spacing: 0.025em;
-      padding-bottom: 18px;
+      @extend %fontStyleRubik;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
     }
   }
   .section-right {
