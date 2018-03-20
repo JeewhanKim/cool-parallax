@@ -146,14 +146,31 @@ section p, section.section-services .services-list h4, section.section-principal
     border-bottom: 1px solid #efad8f; }
   #sticky-menu #logo {
     cursor: pointer;
+    padding-top: 0;
     -webkit-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     -moz-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     -o-transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s;
     transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s; }
-    #sticky-menu #logo img {
+    #sticky-menu #logo .section-logo {
+      position: relative;
+      overflow: hidden; }
+    #sticky-menu #logo .logo-slices {
+      top: 0;
+      position: absolute;
+      width: 100%; }
+      #sticky-menu #logo .logo-slices img {
+        width: 50%;
+        display: block;
+        margin-left: 62%; }
+    #sticky-menu #logo .logo-placeholder {
+      opacity: 0;
       width: 50%;
-      margin-right: -20px;
-      float: right; }
+      display: block; }
+    #sticky-menu #logo .logo-static {
+      width: 50%;
+      min-width: 62px;
+      margin-left: 32px;
+      display: none; }
   #sticky-menu.active #logo {
     opacity: 1;
     display: block; }
@@ -333,6 +350,8 @@ section {
   section.section-video {
     min-height: 200px;
     width: 100%;
+    max-width: 740px;
+    opacity: -1;
     overflow: hidden; }
     @media (max-width: 767px) {
       section.section-video video {

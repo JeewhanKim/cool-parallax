@@ -20,12 +20,35 @@
   }
   #logo {
     cursor: pointer;
+    padding-top: 0;
     @include transition(.5s, cubic-bezier(.77,0,.175,1), 0s);
-    img {
-      width: 50%;
-      margin-right: -20px;
-      float: right;
+    .section-logo {
+      position: relative;
+      overflow: hidden;
     }
+    .logo-slices {
+      top: 0;
+      position: absolute;
+      width: 100%;
+      img {
+        width: 50%;
+        // min-width: 62px;
+        display: block;
+        margin-left: 62%;
+      }
+    }
+    .logo-placeholder {
+      opacity: 0;
+      width: 50%;
+      display: block;
+    }
+    .logo-static {
+      width: 50%;
+      min-width: 62px;
+      margin-left: 32px;
+      display: none;
+    }
+    
   }
   &.active {
     #logo {
@@ -92,6 +115,9 @@
 
 /* Main Nav Indicator */
 .nav {
+
+  
+
   position: fixed;
   top: 50%;
   transform: translateY(-50%);

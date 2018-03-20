@@ -23,6 +23,13 @@ class Elements {
   }
 }
 
+const initAnimation = () => {
+  if(currentChapter === 0) {
+    $('.section-video').css('opacity', 1)
+    logoAnimation()
+  }
+}
+
 const genContents = () => {
   if(typeof contents === 'undefined') return
   $.map(contents, (val,prop) => {$(`#${prop}`).html(val)})
@@ -156,16 +163,18 @@ const navClickEvents = () => {
         $('.section-services .section-right').removeClass('section-ani');
 
         $('.section-video, .section-main, .section-about, .section-services').delay(400).fadeIn(400, () => {
+          if(targetLinkTo === 'body') return
           $('html, body').delay(400).animate({
             scrollTop: $(targetLinkTo).offset().top - 20
-          }, 300);
+          }, 300)
         })
       } else {
         $('html, body').animate({
           scrollTop: $(targetLinkTo).offset().top - 20
-        }, 600);
+        }, 600)
       }
       currentChapter = 0
+      initAnimation()
     }
 
     $('#sticky-menu').addClass('active')
@@ -190,31 +199,32 @@ const logoAnimation = () => {
   const videoHeight = $videoContainer.find('img:eq(0)').outerHeight()
   $videoContainer.find('img').css('height', videoHeight)
   const $videoSlices = $videoContainer.find('img')
-  // $videoContainer.css('top', '-' + videoHeight + 'px')
-
-  // Math.max(1, 3, 2);
 
   let offsetY = 0
-
   $.each($videoSlices, (index, val) => {
-    // console.log($(val).outerHeight())
-    // console.log(offsetY)
     setTimeout(function(){ 
-      // console.log(offsetY)
       $videoContainer.css('top', `-${offsetY}px`)
       offsetY += $(val).outerHeight()
     }, 33*index)
   })
-  // console.log(videoHeight)
-  // for(let i=0; i<$videoSlices.length; i++) {
-    // console.log($videoSlices)
-    // setTimeout(function(){ 
-      // $videoContainer.css('top', `-${$videoSlices.outerHeight() * i}px`)
-    //   // $videoContainer.css('top', `-${videoHeight * i}px`)
-    // }, 33*i);
-  // }
+}
 
+const navLogoAnimation = () => {
+  const $navContainer = $('.logo-slices')
+  const navHeight = $navContainer.find('img:eq(0)').outerHeight()
+  $navContainer.find('img').css('height', navHeight)
+  const $navSlices = $navContainer.find('img')
 
+  console.log(`${$navSlices.length}`)
+
+  let offsetY = 0
+  $.each($navSlices, (index, val) => {
+    setTimeout(function(){ 
+      console.log(index + " " + offsetY)
+      $navContainer.css('top', `-${offsetY}px`)
+      offsetY += $(val).outerHeight()
+    }, 33*index)
+  })
 }
 
 navClickEvents()
@@ -222,10 +232,19 @@ genContents()
 init()
 hashDetect()
 scrollDetect()
-logoAnimation()
+
+
+
 win.scroll( _ =>  { scrollDetect() });
 win.resize( _ =>  { 
   scrollDetect() 
   $('.video-slices, .video-placeholder').hide()
   $('.video-static').show()
+
+  $('.logo-slices, .logo-placeholder').hide()
+  $('.logo-static').show()
 });
+win.load( _ => { 
+  initAnimation()
+  navLogoAnimation()
+})

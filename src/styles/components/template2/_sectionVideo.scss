@@ -1,6 +1,8 @@
 &-video {
   min-height: 200px;
   width: 100%;
+  max-width: 740px;
+  opacity: -1;
   // height: 
   // width: 740px;
   // height: 416px;
@@ -25,14 +27,9 @@
   .video-slices {
     top: 0;
     position: absolute;
-    // animation: logoanimation 2s;
-    // animation-iteration-count: 1;
-
     img {
       display: block;
     }
-
-    // background-image: url(test.jpg);
   }
   .video-placeholder {
     display: block;
