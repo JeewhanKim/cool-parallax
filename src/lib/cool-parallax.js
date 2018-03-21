@@ -279,7 +279,16 @@ init()
 hashDetect()
 scrollDetect()
 
+const viewport = () => {
+  // const viewPortTag=document.createElement('meta');
 
+  // viewPortTag.id="viewport"
+  // viewPortTag.name = "viewport"
+  // viewPortTag.content = "width=device-width, initial-scale=1"
+  
+  // window.parent.document.getElementsByTagName('head').getElementsByTagName('head')[0].appendChild(viewPortTag);
+
+}
 
 win.scroll( _ =>  { scrollDetect() });
 win.resize( _ =>  { 
@@ -290,4 +299,5 @@ win.resize( _ =>  {
 win.load( _ => { 
   initAnimation()
   navLogoAnimation()
+  viewport()
 })

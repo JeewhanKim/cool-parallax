@@ -66,12 +66,12 @@ module.exports = {
       filename: '[name].min.css',
       allChunks: true,
     }),
-    // new webpack.LoaderOptionsPlugin({
-    //     minimize: true,
-    //     debug: true,
-    //     options: {
-    //         postcss: [autoprefixer]       
-    //     }
-    // })
+    new webpack.LoaderOptionsPlugin({
+        minimize: true,
+        debug: true,
+        options: {
+            postcss: [autoprefixer]       
+        }
+    })
   ]
 };
