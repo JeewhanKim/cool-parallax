@@ -31,5 +31,10 @@
       float: right;
       width: 33%;
     }
+    @include mobile() {
+      &-left, &-right {
+        width: 100%;
+      }
+    }
   }
 }
