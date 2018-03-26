@@ -2,8 +2,8 @@ import { setTimeout } from "timers";
 
 /* 
 * Cool Parallax
-* version 0.5.0
-* by Jeewhan Kim (webdeveloper.jee@gmail.com)
+* version 0.7.0
+* by Jeewhan Kim (web.developer.jee@gmail.com)
 */
 const win = $(window)
 const doc = $(document)
@@ -44,25 +44,6 @@ const init = () => {
     obj.options = $(elm).attr('data-animate') ? JSON.parse($(elm).attr('data-animate')) : {}
     elements.push(obj)
   })
-  // $('.chapter').each((i, elm) => {
-  //   offSets.push($(elm).offset().top + stickyNav.outerHeight())
-  // })
-
-  // console.log(offSets)
-
-  // navButtons.click((e) => {
-  //   if(animate) return
-  //   animate = true
-  //   const target = $(e.currentTarget).data('for')
-  //   , moveTo = $(target).offset().top - stickyNav.outerHeight()
-  //   $("html, body").animate({
-  //     scrollTop: moveTo
-  //   }, scrollSpeed, () => {
-  //     animate = false
-  //   });
-  // });
-
-  // document.getElementById("video").play();
 }
 
 const hashDetect = () => {
